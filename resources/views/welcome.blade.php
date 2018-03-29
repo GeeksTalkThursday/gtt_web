@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    GTT Web
                 </div>
 
                 <div class="links">
