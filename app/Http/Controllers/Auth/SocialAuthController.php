@@ -9,6 +9,10 @@ use Exception;
 
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Yuansir\Toastr\Facades\Toastr;
+
+use Illuminate\Mail\Mailer;
+use Mail;
 
 class SocialAuthController extends Controller
 {
@@ -86,7 +90,7 @@ class SocialAuthController extends Controller
      */
     protected function sendSuccessResponse()
     {
-        return redirect()->intended('home');
+        return redirect('/');
     }
     /**
      * Send a failed response with a msg
@@ -127,8 +131,25 @@ class SocialAuthController extends Controller
                 'password' => ''
             ]);
         }
+
+            $name = $providerUser->getName();
+            $to_email = $providerUser->getEmail();
+            $link = url('/');
+
+            Mail::send('emails.creation', ['name' => $name,'link'=>$link], function ($message) use ($to_email)
+            {
+
+                $message->from(env('MAIL_ACCOUNT'), env('APP_NAME')); 
+
+                $message->to($to_email);
+
+                $message->subject(env('APP_NAME') .' '.'Account creation');
+
+            });
         // login the user
         Auth::login($user, true);
+
+        Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
         return $this->sendSuccessResponse();
     }

@@ -146,6 +146,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Yuansir\Toastr\ToastrServiceProvider::class,
+        Skovmand\Mailchimp\MailchimpServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -208,6 +210,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Toastr' => Yuansir\Toastr\Facades\Toastr::class,
 
     ],
 
