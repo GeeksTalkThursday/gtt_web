@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Yuansir\Toastr\Facades\Toastr;
+
+use Illuminate\Mail\Mailer;
+use Mail;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,16 +34,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    public $subscribeEmail ;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(\App\Http\Controllers\MailChimpController $subscribeEmail)
     {
         $this->middleware('guest');
+        $this->subscribeEmail = $subscribeEmail;
     }
 
     /**
@@ -68,5 +77,35 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+
+        $name = Auth::user()->name;
+        $to_email = Auth::user()->email;
+        $link = url('/');
+
+            Mail::send('emails.creation', ['name' => $name,'link'=>$link], function ($message) use ($to_email)
+            {
+
+                $message->from(env('MAIL_ACCOUNT'), env('APP_NAME')); 
+
+                $message->to($to_email);
+
+                $message->subject(env('APP_NAME') .' '.'Account creation');
+
+            });
+
+        if ($request->subscribe != null and $request->subscribe == 'on') {
+            $this->subscribeEmail->subscribeOnRegister($to_email);
+
+        }
+        else{
+            // session()->put('success',' Successfully registered');
+            Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
+        }
+
+        return redirect('/');
     }
 }

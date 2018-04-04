@@ -11,6 +11,15 @@
 |
 */
 
+// ADMIN
+Route::get('/admin/logout',['uses'=>'Admin\AuthController@logout','as'=>'admin.auth.logout']);
+Route::get('/admin/login', ['uses'=>'Admin\AuthController@showLoginForm','as'=>'admin.auth.login']);
+Route::post('/admin/login', 'Admin\AuthController@login');
+// all protected middleare routes goes here...
+Route::middleware('admin')->group( function () {
+	Route::get('/admin', 'AdminController@index')->name('admin');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

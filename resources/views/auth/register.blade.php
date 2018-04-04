@@ -67,6 +67,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"></label>
+                            <div class="col-md-6 ">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="subscribe" {{ old('subscribe') ? 'checked' : '' }}> Subscribe to our notifications
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -78,7 +89,7 @@
                     <div class=" col-sm-12">
                         <div class="panel panel-default">
                             <p></p>
-                            <div class="panel-heading text-center">Or Login</div>
+                            <div class="panel-heading text-center">Or Sign in with</div>
 
                             <div class="panel-body text-center">
                                  <a style="text-decoration: none;  font-size: 30px; padding:10px 20px;" href="{{ route('login') }}" class="btn">

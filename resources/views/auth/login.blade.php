@@ -70,7 +70,7 @@
                     <div class=" col-sm-12">
                         <div class="panel panel-default">
                             <p></p>
-                            <div class="panel-heading text-center">Or Login</div>
+                            <div class="panel-heading text-center">Or Sign in with</div>
 
                             <div class="panel-body text-center">
                           {{--       <a href="{{ route('social.oauth', 'facebook') }}" class="btn btn-primary ">
