@@ -157,7 +157,8 @@ class MailChimpController extends Controller
 
 	        'from_email' => env('MAILCHIMP_EMAIL_SENDER'),
 
-	        'to_name' => $request->input('to_email')
+	        // 'to_name' => $request->input('to_email')
+             'to_name' => 'mail@appsla.co.ke'
 
 	        ];
 
