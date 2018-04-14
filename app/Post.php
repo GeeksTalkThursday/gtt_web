@@ -19,4 +19,7 @@ class Post extends Model
     public function admin(){
         return $this->belongsTo('App\Admin');
     }
+     public function views(){
+        return $this->belongsTo('App\User');
+    }
 }

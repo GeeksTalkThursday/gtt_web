@@ -22,6 +22,7 @@ class PostsController extends Controller
     {
         $post = Post::orderBy('created_at','desc')->paginate(15);
         return view('admin.dashboard.post.index')->withPosts($post);
+    
     }
 
     /**
@@ -97,6 +98,8 @@ class PostsController extends Controller
     {
         $post = Post::where('slug',$slug)->first();
         return view('admin.dashboard.post.show')->withPost($post);
+        return view('home')->withPost($post);
+
     }
 
     /**
