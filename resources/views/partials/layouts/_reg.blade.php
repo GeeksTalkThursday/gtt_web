@@ -1,18 +1,10 @@
-@extends('layouts.app')
-
-@section('title','Register')
-
-@section('content')
-<div class="container">
-    <div class="row ">
+<div class="m-modal-box" id="registerModal">
+        <div class="m-modal-overlay"></div>
         <div class="m-modal-content small">
-            @if ($errors->has('msg'))
-                <div class="alert alert-warning">
-                    {{ $errors->first('msg') }}
-                    <button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                </div>
-            @endif
-            {{-- tuna replace na cvard hapa but sasa tutaweka fileds za huku tu the new first ndio tutoe card --}}
+            <div class="m-modal-header">
+                <h3 class="m-modal-title">Register</h3>
+                <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+            </div>
             <div class="m-modal-body">
                 {{-- hii iko kwa login LREDy --}}
                 <div class="m-modal-social-logins">
@@ -77,8 +69,5 @@
                     <p class="txt-center">Do you already have an account? <a href="index4.html#" data-modal="loginModal">Login</a></p>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
-@endsection

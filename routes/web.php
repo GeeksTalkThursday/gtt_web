@@ -28,10 +28,6 @@ Route::get('manageMailChimp', 'MailChimpController@manageMailChimp');
 Route::post('subscribe',['as'=>'subscribe','uses'=>'MailChimpController@subscribe']);
 Route::post('sendCompaign',['as'=>'sendCompaign','uses'=>'MailChimpController@sendCompaign']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -40,3 +36,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('auth/social', 'Auth\SocialAuthController@show')->name('social.login');
 Route::get('oauth/{driver}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
 Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');
+//Pages
+
+Route::get('/','PagesController@index');
