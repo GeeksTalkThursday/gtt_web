@@ -39,3 +39,8 @@ Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderC
 //Pages
 
 Route::get('/','PagesController@index');
+Route::get('/contact','PagesController@contact');
+
+Route::get('/blog/{slug}','PagesController@single')->name('blog.single');
+Route::get('/blog/category/{category}','PagesController@category')->name('blog.category');
+Route::get('/blog/tag/{tag}','PagesController@tag')->name('blog.tag');
