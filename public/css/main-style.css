@@ -2881,3 +2881,25 @@ code {
 font-family: Courier, 'New Courier', monospace;
 font-size: 12px;
 }
+
+.footer{
+		width: 100%;
+		z-index: 999;
+	font-size: 14px;
+	height: 80px;
+	background: #7b4397; 
+	background: -webkit-linear-gradient(to right, #dc2430, #7b4397); 
+	background: linear-gradient(to right, #dc2430, #7b4397);
+
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+color: #fff;
+position: absolute;
+}
+.tagged{
+	background-color: #8F0093;
+	color: #fff;
+	padding: 10px;
+	margin-right: 5px;
+}

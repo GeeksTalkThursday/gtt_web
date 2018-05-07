@@ -44,3 +44,8 @@ Route::get('/contact','PagesController@contact');
 Route::get('/blog/{slug}','PagesController@single')->name('blog.single');
 Route::get('/blog/category/{category}','PagesController@category')->name('blog.category');
 Route::get('/blog/tag/{tag}','PagesController@tag')->name('blog.tag');
+
+//comment
+Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+
+// Route::post('/happy', 'FavoriteController@happy');

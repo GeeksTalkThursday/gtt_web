@@ -75,11 +75,11 @@
 				<div class="content-sidebar">
 					<div class="sidebar_inner">
 
-						<div class="widget-item">
+						{{-- <div class="widget-item">
 							<a href="list-timeline.html#" class="widget-ad-box">
 								<img src="/img/adbox300x600.png" width="300" height="600">
 							</a>
-						</div>
+						</div> --}}
 
 						<div class="widget-item">
 							<div class="w-header">
@@ -112,11 +112,11 @@
 							</div>
 						</div>
 
-						<div class="seperator"></div>
+						{{-- <div class="seperator"></div>
 
 						<a href="list-timeline.html#" class="widget-ad-box">
 							<img src="/img/adbox300x250.png" width="300" height="250">
-						</a>
+						</a> --}}
 
 					</div>
 				</div>

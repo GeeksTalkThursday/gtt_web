@@ -10,7 +10,7 @@
             <!--logo start -->
             <div class="logo-box">
                 <h1>
-                    <a href="index.html" class="logo"></a>
+                    <a href="{{url('/')}}" class="logo"></a>
                 </h1>
             </div>
             <!--logo end -->

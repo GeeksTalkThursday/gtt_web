@@ -59,25 +59,25 @@
 							<div class="article-left-box">
 								<div class="article-left-box-inner">
 									<div class="article-share">
-										<a href="#" class="facebook"></a>
-										<a href="#" class="twitter"></a>
-										<a href="#" class="google-plus"></a>
+										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Check out  {{$post->title }} on {{ url('blog/'.$post->slug) }} . powered by Apps:Lab KE on https://www.appslab.co.ke" class="facebook"></a>
+										<a target="_blank" href="https://twitter.com/home?status=Hey,check out {{$post->title }} on {{ url('blog/'.$post->slug) }} . Follow @AppsLab_KE" class="twitter"></a>
+										<a target="_blank" href="#" class="google-plus"></a>
 									</div>
-									<span class="add-to-favorite" data-zebra-tooltip title="Ad to favorite">
+									{{-- <span class="add-to-favorite" data-zebra-tooltip title="Ad to favorite">
 										<i class="material-icons">&#xE866;</i>
-									</span>
-									<ul class="article-emoticons">
+									</span> --}}
+									{{-- <ul class="article-emoticons">
 										<li>
-											<a href="#" class="popular happy"></a><span>13</span>
+											<a href="#" class="popular happy"></a><span class="happy1">13</span>
 											<ul>
-												<li><a href="#" class="love"></a><span>7</span></li>
-												<li><a href="#" class="shocked"></a><span>5</span></li>
-												<li><a href="#" class="angry"></a><span>4</span></li>
-												<li><a href="#" class="crying"></a><span>1</span></li>
-												<li><a href="#" class="sleepy"></a><span>0</span></li>
+												<li><a href="#" class="love"></a><span class="love1"> 7</span></li>
+												<li><a href="#" class="shocked"></a><span class="shocked1">5</span></li>
+												<li><a href="#" class="angry"></a><span class="angry1">4</span></li>
+												<li><a href="#" class="crying"></a><span class="crying1">1</span></li>
+												<li><a href="#" class="sleepy"></a><span class="sleepy1">0</span></li>
 											</ul>
 										</li>										
-									</ul>
+									</ul> --}}
 								</div>
 							</div>
 							<div class="article-inner">
@@ -137,24 +137,22 @@
 							<!-- article comment area start -->
 							<div class="article-comments">
 								<div class="w-header">
-									<div class="w-title">Comments (7)</div>
+									<div class="w-title">Comments ({{$post->comments()->count()}})</div>
 									<div class="w-seperator"></div>
 								</div>
 								<div class="comment-form">
-									<form>
+									<form action="{{route('comments.store',$post->id)}}" method="post" data-parsley-validate >
+                            			{{ csrf_field() }}
 										<div class="comment-columns">
-											<div class="frm-row columns column-2">
-												<input type="text" name="n" placeholder="Name" class="frm-input">
+											<div class="frm-row columns column-3">
+												<input name="name" {{Auth::check()? "readonly": ''}} value="{{Auth::check()?Auth::user()->name: ''}}" placeholder="Name" class="frm-input" required="">
 											</div>
-											<div class="frm-row columns column-2">
-												<input type="text" name="e" placeholder="Email" class="frm-input">
-											</div>
-											<div class="frm-row columns column-2">
-												<input type="text" name="w" placeholder="Website" class="frm-input">
+											<div class="frm-row columns column-3">
+												<input type="email" name="email" {{Auth::check()? "readonly": ''}} value="{{Auth::check()?Auth::user()->email: ''}}" placeholder="Email" class="frm-input" required="">
 											</div>
 										</div>
 										<div class="frm-row">
-											<textarea class="frm-input" rows="4" placeholder="Your comments..."></textarea>
+											<textarea class="frm-input" name="comment" rows="4" placeholder="Your comments..."></textarea>
 										</div>
 										<div class="frm-row">
 											<div class="comment-form-notice columns column-4">
@@ -162,7 +160,7 @@
 												<div>You are commenting as a visitor, you can <a href="#" data-modal="loginModal">login</a> or <a href="#" data-modal="registerModal">register</a></div>
 											</div>
 											<div class="columns column-2">
-												<button type="button" class="frm-button full material-button">Send your comment</button>
+												<button type="submit" class="frm-button full material-button">Send your comment</button>
 											</div>
 											<div class="clearfix"></div>
 										</div>
@@ -171,139 +169,39 @@
 								</div>
 								<div class="all-comments">
 
+								@forelse($post->comments()->paginate(6) as $comment)
 									<!-- comment item start -->
 									<div class="comment-item">
 										<div class="comment-avatar">
-											<span class="comment-img"><img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" width="50" height="50"></span>
+											<span class="comment-img"><img src={{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email)))  }} width="50" height="50"></span>
 										</div>
 										<div class="comment-content">
 											<div class="comment-header">
-												<span class="author-name">Visitor</span> - 
-												<span class="comment-date">3 hours ago</span>
+												<span class="author-name">{{$comment->name}}</span> - 
+												<span class="comment-date">{{ date('F dS, Y - g:iA',strtotime($comment->created_at)) }}</span>
 											</div>
 											<div class="comment-wrapper">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												{!! $comment->comment !!}
 											</div>
-											<div class="comment-meta">
-												<span class="replay-button">Replay</span>
-												<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+7</span></button>
-												<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-1</span></button>
-											</div>
+											
 										</div>
 									</div>
 									<!-- comment item end -->
+								@empty
 
-									<!-- comment item start -->
 									<div class="comment-item">
-										<div class="comment-avatar">
-											<span class="comment-img"><img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" width="50" height="50"></span>
-										</div>
+										
 										<div class="comment-content">
-											<div class="comment-header">
-												<span class="author-name">Visitor</span> - 
-												<span class="comment-date">3 hours ago</span>
-											</div>
+											
 											<div class="comment-wrapper">
-												Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+												No comments yet...
 											</div>
-											<div class="comment-meta">
-												<span class="replay-button">Replay</span>
-												<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+2</span></button>
-												<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-1</span></button>
-											</div>
+											
 										</div>
 									</div>
-									<!-- comment item end -->
 
-									<!-- comment item start -->
-									<div class="comment-item">
-										<div class="comment-avatar">
-											<span class="comment-img"><img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" width="50" height="50"></span>
-										</div>
-										<div class="comment-content">
-											<div class="comment-header">
-												<a href="#" class="author-name">Mr. Spock</a> - 
-												<span class="comment-date">3 hours ago</span>
-											</div>
-											<div class="comment-wrapper">
-												Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-											</div>
-											<div class="comment-meta">
-												<span class="replay-button">Replay</span>
-												<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+1</span></button>
-												<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-12</span></button>
-											</div>
+								@endforelse
 
-											<!-- comment item start -->
-											<div class="comment-item">
-												<div class="comment-avatar">
-													<span class="comment-img"><img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" width="50" height="50"></span>
-												</div>
-												<div class="comment-content">
-													<div class="comment-header">
-														<span class="author-name">Visitor</span> - 
-														<span class="comment-date">3 hours ago</span>
-													</div>
-													<div class="comment-wrapper">
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-													</div>
-													<div class="comment-meta">
-														<span class="replay-button">Replay</span>
-														<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+7</span></button>
-														<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-1</span></button>
-													</div>
-
-													<!-- comment item start -->
-													<div class="comment-item">
-														<div class="comment-avatar">
-															<span class="comment-img"><img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" width="50" height="50"></span>
-														</div>
-														<div class="comment-content">
-															<div class="comment-header">
-																<a href="#" class="author-name">Mr. Spock</a> - 
-																<span class="comment-date">3 hours ago</span>
-															</div>
-															<div class="comment-wrapper">
-																Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-															</div>
-															<div class="comment-meta">
-																<span class="replay-button">Replay</span>
-																<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+7</span></button>
-																<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-1</span></button>
-															</div>
-														</div>
-													</div>
-													<!-- comment item end -->
-
-												</div>
-											</div>
-											<!-- comment item end -->
-
-											<!-- comment item start -->
-											<div class="comment-item">
-												<div class="comment-avatar">
-													<span class="comment-img"><img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" width="50" height="50"></span>
-												</div>
-												<div class="comment-content">
-													<div class="comment-header">
-														<a href="#" class="author-name">Mr. Spock</a> - 
-														<span class="comment-date">3 hours ago</span>
-													</div>
-													<div class="comment-wrapper">
-														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-													</div>
-													<div class="comment-meta">
-														<span class="replay-button">Replay</span>
-														<button type="button" class="comment-vote up-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">+7</span></button>
-														<button type="button" class="comment-vote down-vote"><i class="material-icons">&#xE8DC;</i> <span class="vote-count">-1</span></button>
-													</div>
-												</div>
-											</div>
-											<!-- comment item end -->
-
-										</div>
-									</div>
-									<!-- comment item end -->
 
 								</div>
 							</div>
