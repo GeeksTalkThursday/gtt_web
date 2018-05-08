@@ -293,7 +293,7 @@
                       <td>
                         <p>From {{$name}},</p>
                         <p>Subject: {{$subject}}</p>
-                        <p>{Message: {$content}}</p>
+                        <p>Message: {{$content}}</p>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
