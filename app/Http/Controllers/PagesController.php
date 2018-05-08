@@ -63,6 +63,26 @@ class PagesController extends Controller
         return view('pages.tag')->withPosts($post)->withTagged($current)->withPorpulars($porpular);
     }
 
+    public function search()
+    {
+        $key = \Request::get('qq');
+        $post = Post::with('Category')->where('title','like','%'.$key.'%')
+        ->orWhereHas('Category', function ($q) use ($key){
+            $q->where('category','like','%'.$key.'%');
+        })
+        ->paginate(10);
+        if (!count($post)) {
+
+            Toastr::warning('Search Results Returned nothing', $title = 'No Search Result', $options = ["progressBar"=>true]);
+            return redirect('/');
+        }
+        $porpular = Post::inRandomOrder()->get()->take(4);
+
+        Toastr::success('Search results', $title = 'Search', $options = ["progressBar"=>true]);
+
+        return view('pages.search')->withPosts($post)->withSearched($key)->withPorpulars($porpular);
+    }
+
     public function contact()
     {
     	return view('pages.general.contact');

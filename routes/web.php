@@ -41,6 +41,8 @@ Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderC
 Route::get('/','PagesController@index');
 Route::get('/posts','PagesController@posts');
 Route::get('/contact','PagesController@contact');
+Route::post('/contact_form', 'PagesController@EmailContact');
+Route::get('/search','PagesController@search');
 
 Route::get('/blog/{slug}','PagesController@single')->name('blog.single');
 Route::get('/blog/category/{category}','PagesController@category')->name('blog.category');
@@ -50,5 +52,3 @@ Route::get('/blog/tag/{tag}','PagesController@tag')->name('blog.tag');
 Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
 
 // Route::post('/happy', 'FavoriteController@happy');
-
-Route::post('/contact_form', 'PagesController@EmailContact');
