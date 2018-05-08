@@ -10,7 +10,7 @@
             <!--logo start -->
             <div class="logo-box">
                 <h1>
-                    <a href="index.html" class="logo"></a>
+                    <a href="{{url('/')}}" class="logo"></a>
                 </h1>
             </div>
             <!--logo end -->
@@ -19,60 +19,18 @@
 
                 <!-- header left menu start -->
                 <ul class="header-navigation" data-show-menu-on-mobile>
-                    <li>
-                        <a href="index4.html#" class="material-button submenu-toggle">HOME</a>
-                        <div class="header-submenu">
-                            <ul>
-                                <li><a href="index.html">Home demo 1</a></li>
-                                <li><a href="index2.html">Home demo 2</a></li>
-                                <li><a href="index3.html">Home demo 3</a></li>
-                                <li><a href="index4.html">Home demo 4</a></li>
-                                <li><a href="index5.html">Home demo 5</a></li>
-                                <li><a href="index6.html">Home demo 6</a></li>
-                            </ul>
-                        </div>
+                    {{-- <li>
+                        <a href="#" class="material-button ">HOME</a>
                     </li>
                     <li>
-                        <a href="index4.html#" class="material-button submenu-toggle">POSTS</a>
-                        <div class="header-submenu">
-                            <ul>
-                                <li><a href="list-timeline.html">List timeline</a></li>
-                                <li><a href="list-two-column.html">List column 2</a></li>
-                                <li><a href="list-three-column.html">List column 3</a></li>
-                                <li><a href="detail-standart.html">Detail standart</a></li>
-                                <li><a href="detail-parallax.html">Detail parallax</a></li>
-                                <li><a href="detail-with-large-adbox.html">Detail adbox 1</a></li>
-                                <li><a href="detail-with-slim-adbox.html">Detail adbox 2</a></li>
-                                <li><a href="detail-left-sidebar.html">Left sidebar</a></li>
-                                <li><a href="detail-left-sidebar-adbox.html">Left sidebar adbox</a></li>
-                                <li><a href="detail-full-width.html">Full width</a></li>                                
-                            </ul>
-                        </div>
+                        <a href="#" class="material-button ">POSTS</a>
                     </li>
                     <li>
-                        <a href="index4.html#" class="material-button submenu-toggle">VIDEO</a>
-                        <div class="header-submenu">
-                            <ul>
-                                <li><a href="video-standart.html">Video standart</a></li>
-                                <li><a href="video-iframe.html">Video iframe</a></li>
-                                <li><a href="video-custom-player.html">Video custom player</a></li>
-                            </ul>
-                        </div>
+                        <a href="#" class="material-button ">VIDEO</a>
                     </li>
                     <li>
-                        <a href="index4.html#" class="material-button submenu-toggle">EXTRA PAGES <i class="material-icons">&#xE313;</i></a>
-                        <div class="header-submenu">
-                            <ul>
-                                <li><a href="authors.html">Authors</a></li>
-                                <li><a href="author-posts-1.html">Author posts-column</a></li>
-                                <li><a href="author-posts-2.html">Author posts-timeline</a></li>
-                                <li><a href="about-us.html">About us</a></li>
-                                <li><a href="privacy-policy.html">Privacy policy</a></li>                               
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="error.html">Error</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                        <a href="#" class="material-button ">EXTRA PAGES</a>
+                    </li> --}}
                 </ul>
                 <!-- header left menu end -->
 

@@ -15,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        view()->composer('layouts.app', function($view)
+            {   
+                $tags = \App\Tag::all();
+                $view->with('tags_all', $tags);
+            });
     }
 
     /**
