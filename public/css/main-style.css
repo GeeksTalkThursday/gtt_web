@@ -2884,7 +2884,7 @@ font-size: 12px;
 
 .footer{
 		width: 100%;
-		z-index: 999;
+		z-index: 999!important;
 	font-size: 14px;
 	height: 80px;
 	background: #7b4397; 
@@ -2895,11 +2895,33 @@ font-size: 12px;
 	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
 color: #fff;
-position: absolute;
+/*position: absolute;*/
+/*margin-bottom: -300px!important;*/
 }
 .tagged{
 	background-color: #8F0093;
 	color: #fff;
-	padding: 10px;
 	margin-right: 5px;
+	margin: 5px;
+}
+
+
+
+.add-to-favorite1{
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	padding: 11px;
+	border-radius: 50%;
+	border:solid 2px #dc2430;
+	margin: 10px 0;
+	/*color: #dc2430;*/
+	cursor: pointer;
+	background-color: #dc2430;
+	color: #FFF;
+}
+.add-to-favorite1:hover{
+	background-color: #fff ;
+	color: #dc2430 ;
 }

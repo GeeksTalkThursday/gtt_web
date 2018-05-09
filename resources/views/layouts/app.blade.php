@@ -27,12 +27,12 @@
                 <div class="main-content-wrapper">
                     <div class="content-body">
                         <h4 class="h4"> Tags: </h4>
-                        <p>
+                        <p style="padding: 10px; margin:5px;">
                             @php
                                 $len = count($tags_all);
                             @endphp
                             @foreach($tags_all as $key => $tag)
-                                <a href="{{route('blog.tag',$tag->name)}}" style="text-decoration: none;" class=""><span class="tagged"> {{$tag->name}} </span></a>
+                                <a href="{{route('blog.tag',$tag->name)}}" style="padding: 5px; text-decoration: none;" class=""><span class="tagged"> {{$tag->name}} </span></a>
                                 <span style="color: #E30025;">{{$key == $len - 1 ?'   ':' | '}}</span>
                             @endforeach
                         </p>
