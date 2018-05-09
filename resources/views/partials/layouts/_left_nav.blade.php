@@ -31,8 +31,8 @@
                         <span class="menu-label">Videos</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="material-button">
+                <li class="{{ Request::is('posts') ? "active" : "" }}">
+                    <a href="{{url('/posts')}}" class="material-button">
                         <span class="menu-icon"><i class="material-icons">&#xE0BF;</i></span>
                         <span class="menu-label">Posts</span>
                     </a>

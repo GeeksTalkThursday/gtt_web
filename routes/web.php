@@ -39,7 +39,10 @@ Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderC
 //Pages
 
 Route::get('/','PagesController@index');
+Route::get('/posts','PagesController@posts');
 Route::get('/contact','PagesController@contact');
+Route::post('/contact_form', 'PagesController@EmailContact');
+Route::get('/search','PagesController@search');
 
 Route::get('/blog/{slug}','PagesController@single')->name('blog.single');
 Route::get('/blog/category/{category}','PagesController@category')->name('blog.category');
