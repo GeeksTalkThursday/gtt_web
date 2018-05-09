@@ -36,9 +36,12 @@ class PagesController extends Controller
     	$pop = Post::inRandomOrder()->get()->take(3);
     	$porpular = Post::inRandomOrder()->get()->take(5);
 
-        $book = Bookmark::where('user_id',Auth::user()->id)->where('post_id',$post->id)->first();
+        if (Auth::check()) {
+            $book = Bookmark::where('user_id',Auth::user()->id)->where('post_id',$post->id)->first();
+            return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop)->withBook($book);
+        }
 
-    	return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop)->withBook($book);
+    	return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop);
     }
 
     public function category($category)

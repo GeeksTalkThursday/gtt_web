@@ -63,11 +63,20 @@
 										<a target="_blank" href="https://twitter.com/home?status=Hey,check out {{$post->title }} on {{ url('blog/'.$post->slug) }} . Follow @AppsLab_KE" class="twitter"></a>
 										<a target="_blank" href="https://plus.google.com/share?url= check out {{$post->title}} on {{ url('blog/'.$post->slug) }} . View more products by Apps:Lab KE on https://www.appslab.co.ke" class="google-plus"></a>
 									</div>
+								@auth
 									<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >
 										<span id="button-fav" class="{{$book?'add-to-favorite1':'add-to-favorite'}}" data-zebra-tooltip title="Add to favorite">
 										<i class="material-icons">&#xE866;</i>
 										</span>
 									</a>
+								@endauth
+								@guest
+								<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >
+										<span id="button-fav" class="add-to-favorite" data-zebra-tooltip title="Add to favorite">
+										<i class="material-icons">&#xE866;</i>
+										</span>
+									</a>
+								@endguest
 									{{-- <ul class="article-emoticons">
 										<li>
 											<a href="#" class="popular happy"></a><span class="happy1">13</span>

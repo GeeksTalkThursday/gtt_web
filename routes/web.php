@@ -54,4 +54,4 @@ Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' =>
 
 // Route::post('/happy', 'FavoriteController@happy');
 Route::get('/favorite/{post_id}','BookmarksController@bookmark');
-Route::get('/saved-blog','BookmarksController@saved');
+Route::get('/saved-blog','BookmarksController@saved')->middleware('auth');
