@@ -10,13 +10,13 @@
                 <div class="m-modal-social-logins">
                     <br>
                     <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'github') }}" class="frm-button facebook material-button full" type="button">GitHub</a>
+                        <a href="{{ route('social.oauth', 'github') }}" class="frm-button facebook material-button full" type="button"><i class="fa fa-github"></i> GitHub</a>
                     </div>
                     <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'bitbucket') }}" class="frm-button twitter material-button full" type="button">Bitbucket</a>
+                        <a href="{{ route('social.oauth', 'bitbucket') }}" class="frm-button twitter material-button full" type="button">{{-- <i class="fa fa-bitbucket"></i> --}} Bitbucket</a>
                     </div>
                     <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button">Google</a>
+                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button"><i class="fa fa-google"></i> Google</a>
                     </div>
                 </div>
 

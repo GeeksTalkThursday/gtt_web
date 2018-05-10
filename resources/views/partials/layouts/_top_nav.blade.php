@@ -58,7 +58,7 @@
                         <a href="index4.html#" class="material-button submenu-toggle"><i class="material-icons">&#xE7FD;</i> <span class="hide-on-tablet">{{ Auth::user()->name }}</span></a>
                         <div class="header-submenu">
                             <ul>
-                                <li><a href="#">Profile</a></li>
+                                <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>
                                 <li>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -78,7 +78,7 @@
                 @endguest
 
 
-                    <li class="hide-on-mobile"><a href="index4.html#" class="material-button" data-modal="newsletterModal"><i class="material-icons">&#xE0E1;</i></a></li>
+                    <li class="hide-on-mobile1"><a href="index4.html#" class="material-button" data-modal="newsletterModal"><i class="material-icons">&#xE0E1;</i></a></li>
                 </ul>
                 <!-- header right menu end -->
 
@@ -88,13 +88,18 @@
             <div class="search-bar">
                 <form class="search-form" method="get" data-parsley-validate action="{{url('search')}}" > @csrf 
                     <div class="search-input-wrapper">
-                        <input type="text" name="qq" placeholder="search something..." class="search-input" required="">
+                        <input type="text" name="qq" id="search" placeholder="search something..." class="search-input" required="" autocomplete="off">
+                        
                         <button type="submit" class="search-submit"><i class="material-icons">&#xE5C8;</i></button>
                     </div>
                     <span class="search-close search-toggle">
                         <i class="material-icons">&#xE5CD;</i>
                     </span>
                 </form>
+                <span id="presearch">
+                            
+                </span>
+                
             </div>
             <!--header search panel end -->
 

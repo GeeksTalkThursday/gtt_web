@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\Bookmark;
 use Mail;
+use Auth;
 use Yuansir\Toastr\Facades\Toastr;
+use View;
 
 class PagesController extends Controller
 {
@@ -32,6 +35,11 @@ class PagesController extends Controller
     	$slide = Post::orderBy('created_at','desc')->get()->take(4);
     	$pop = Post::inRandomOrder()->get()->take(3);
     	$porpular = Post::inRandomOrder()->get()->take(5);
+
+        if (Auth::check()) {
+            $book = Bookmark::where('user_id',Auth::user()->id)->where('post_id',$post->id)->first();
+            return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop)->withBook($book);
+        }
 
     	return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop);
     }
@@ -81,6 +89,20 @@ class PagesController extends Controller
         Toastr::success('Search results', $title = 'Search', $options = ["progressBar"=>true]);
 
         return view('pages.search')->withPosts($post)->withSearched($key)->withPorpulars($porpular);
+    }
+
+    public function preSearch($key)
+    {
+        // $key = 'php';
+        $post = Post::with('Category')->where('title','like','%'.$key.'%')
+        ->orWhereHas('Category', function ($q) use ($key){
+            $q->where('category','like','%'.$key.'%');
+        })
+        ->take(6)->get();
+        if (!count($post)) {
+            return response()->json('nosearch');
+        }
+        return View::make('partials._search')->withPosts($post);
     }
 
     public function contact()

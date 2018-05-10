@@ -117,7 +117,8 @@
 		font-size: 18px;
 	}
 	.article-left-box{
-		display: none;
+		/*display: none;*/
+		margin-top: -450px;
 	}
 	.article-inner{
 		margin-left: 0 !important;
