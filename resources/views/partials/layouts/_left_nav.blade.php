@@ -31,6 +31,7 @@
                         <span class="menu-label">Videos</span>
                     </a>
                 </li>
+
                 <li class="{{ Request::is('posts') ? "active" : "" }}">
                     <a href="{{url('/posts')}}" class="material-button">
                         <span class="menu-icon"><i class="material-icons">&#xE0BF;</i></span>
@@ -43,6 +44,7 @@
                         <span class="menu-label">Contact</span>
                     </a>
                 </li>
+
             </ul>
             <!-- sidebar menu end -->
 
