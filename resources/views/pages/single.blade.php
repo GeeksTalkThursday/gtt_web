@@ -59,9 +59,9 @@
 							<div class="article-left-box">
 								<div class="article-left-box-inner">
 									<div class="article-share">
-										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Check out  {{$post->title }} on {{ url('blog/'.$post->slug) }} . powered by Apps:Lab KE on https://www.appslab.co.ke" class="facebook"></a>
+										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Check%20out%20{{$post->title }}%20on%20{{ url('blog/'.$post->slug) }}.%20powered%20by%20Apps:Lab%20KE%20on%20https://www.appslab.co.ke" class="facebook"></a>
 										<a target="_blank" href="https://twitter.com/home?status=Hey,check out {{$post->title }} on {{ url('blog/'.$post->slug) }} . Follow @AppsLab_KE" class="twitter"></a>
-										<a target="_blank" href="https://plus.google.com/share?url= check out {{$post->title}} on {{ url('blog/'.$post->slug) }} . View more products by Apps:Lab KE on https://www.appslab.co.ke" class="google-plus"></a>
+										<a target="_blank" href="https://plus.google.com/share?url{{ ltrim(http_build_query([url('blog/'.$post->slug)]),'0') }}" class="google-plus"></a>
 									</div>
 								@auth
 									<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >

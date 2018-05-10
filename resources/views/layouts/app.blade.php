@@ -46,7 +46,7 @@
         <div class="main-content">
             <div class="main-content-wrapper">
                 <div class="content-b">
-                    <p style="text-align: center; padding: 10px;" >{{date('Y')." ".env('APP_NAME')}} | Powered By <a style="color:cyan; text-decoration: none;" href="https://www.appslab.co.ke" target="_blank">App:Lab KE</a> </p>
+                    <p style="text-align: center; padding: 10px;" >{{date('Y')." ".env('APP_NAME')}} | Powered By <a style="color:cyan; text-decoration: none;" href="http://www.appslab.co.ke" target="_blank">App:Lab KE</a> </p>
                 </div>
             </div>
         </div>

@@ -20,3 +20,6 @@
 
     <!-- Ideabox responsive css file -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive-style.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <link href="{{asset('css/prism.css')}}" rel="stylesheet" /> --}}

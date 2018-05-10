@@ -25,12 +25,12 @@
                         <span class="menu-label">Home</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="#" class="material-button">
                         <span class="menu-icon"><i class="material-icons">&#xE038;</i></span>
                         <span class="menu-label">Videos</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="{{ Request::is('posts') ? "active" : "" }}">
                     <a href="{{url('/posts')}}" class="material-button">
                         <span class="menu-icon"><i class="material-icons">&#xE0BF;</i></span>
@@ -57,19 +57,19 @@
             <ul class="sidebar-menu">
                 <li>
                     <a href="{{ route('social.oauth', 'bitbucket') }}" class="facebook material-button">
-                        <span class="menu-label">Bitbucket</span>
+                        <span class="menu-label"><i class="fa fa-bitbucket"></i> Bitbucket</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('social.oauth', 'github') }}" class="twitter material-button">
-                        <span class="menu-label">GitHub</span>
+                        <span class="menu-label"><i class="fa fa-github"></i> GitHub</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('social.oauth', 'google') }}" class="google-plus material-button">
-                        <span class="menu-label">Google +</span>
+                        <span class="menu-label"><i class="fa fa-google"></i> Google </span>
                     </a>
-                </li>
+                </li> 
             </ul>
         @endguest
             <!-- sidebar menu end -->

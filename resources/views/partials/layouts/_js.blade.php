@@ -8,6 +8,8 @@
 
     <!-- Ideabox theme js file. you have to add all pages. -->
     <script src="{{ asset('js/main-script.js') }}"></script>
+    {{-- <script src="{{asset('js/prism.js')}}"></script> --}}
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
@@ -59,6 +61,7 @@
             // console.log(data);
         });
     });
+    $("pre").addClass('prettyprint');
     </script>
     <script type="text/javascript">
         
@@ -92,3 +95,4 @@
 
         });
     </script>
+

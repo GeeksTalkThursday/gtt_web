@@ -78,7 +78,7 @@
                 @endguest
 
 
-                    <li class="hide-on-mobile"><a href="index4.html#" class="material-button" data-modal="newsletterModal"><i class="material-icons">&#xE0E1;</i></a></li>
+                    <li class="hide-on-mobile1"><a href="index4.html#" class="material-button" data-modal="newsletterModal"><i class="material-icons">&#xE0E1;</i></a></li>
                 </ul>
                 <!-- header right menu end -->
 
