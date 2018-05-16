@@ -2866,6 +2866,9 @@ textarea.frm-input{
 }
 
 /*end of me*/
+pre{
+	overflow: auto;
+}
 
 /* desert scheme ported from vim to google prettify */
 pre.prettyprint { display: block; background-color: #333 }
@@ -2911,7 +2914,7 @@ font-size: 12px;
 		width: 100%;
 		z-index: 999!important;
 	font-size: 14px;
-	height: 80px;
+	/*height: 80px;*/
 	background: #7b4397; 
 	background: -webkit-linear-gradient(to right, #dc2430, #7b4397); 
 	background: linear-gradient(to right, #dc2430, #7b4397);
@@ -2949,4 +2952,39 @@ color: #fff;
 .add-to-favorite1:hover{
 	background-color: #fff ;
 	color: #dc2430 ;
+}
+
+
+/*footer*/
+footer {
+	padding: 20px 0 20px;
+	background: url('../img/footer.jpg');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+
+
+
+footer .bottom-footer {
+	margin-top: 10px;
+}
+
+footer .social-footer {
+	padding: 0;
+	list-style: none;
+}
+
+footer .social-footer li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+footer .social-footer li a {
+	font-size: 24px;
+	color: #fff;
+}
+
+footer .social-footer li:hover a {
+	color: #00a8ff;
 }
