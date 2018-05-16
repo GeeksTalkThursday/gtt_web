@@ -1,8 +1,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{env('APP_NAME')}} is a rcode sharing platform from Apps:Lab KE">
+        <meta name="author" content="Apps:Lab KE">
+        <meta name="keyword" content="code, share, tech , community, learn, build, Eldoret, #EldoretToTheWorld">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"
+
+        <meta name="theme-color" content="#D60037">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <title>{{ config('app.name', 'GTT') }} | @yield('title') </title>
     

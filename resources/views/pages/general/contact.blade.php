@@ -62,6 +62,12 @@
 							<a href="#" class="sidebar-buttons material-button active"><i class="material-icons">&#xE894;</i><span class="btn-label">Contacts</span></a>
 						</div>
 
+						<div class="sidebar-spacer"></div>
+
+						<a href="index4.html#" class="widget-ad-box">
+                            <img src="/img/adbox300x250.png" width="300" height="250">
+                        </a>
+
 					</div>
 				</div>
 			</div>
