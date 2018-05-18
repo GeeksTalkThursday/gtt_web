@@ -42,12 +42,12 @@
 
     </main>
 
-<<<<<<< HEAD
+
 
 {{-- Footer html source start--}}
-    @include('partials.layouts._footer')
+    {{--@include('partials.layouts._footer')--}}
     {{-- Footer html source end--}}
-=======
+
    {{--  <footer class="footer" >
         <div class="main-content">
             <div class="container">
@@ -95,10 +95,10 @@
 
                                 <img src="{{asset('/img/logo-mono.png')}}" alt="" width="200" class="wow pulse" data-wow-delay="1s">
                                 <p style="color: #2A2A2A;">{{env('APP_NAME')}} is a code sharing platform.</p>
-                                <ul class="footer-adress" style="color: #2A2A2A; padding: 10px;">
-                                    <li><i class="fa fa-map-marker strong"> </i> Eldoret KE</li>
-                                    <li><i class="fa fa-envelope strong"> </i>gtt@appslab.co.ke</li>
-                                    <li><i class="fa fa-phone strong"> </i> +254 704407117</li>
+                                <ul class="footer-address">
+                                    <li><i class="fa fa-map-marker strong"> <span style="padding-left: 16px;"> Eldoret KE</span></i></li>
+                                    <li><i class="fa fa-envelope strong"> <span style="padding-left: 10px;">gtt@appslab.co.ke</span></i></li>
+                                    <li><i class="fa fa-phone strong"> <span style="padding-left: 10px;">+254 704407117</span></i>
                                 </ul>
                             </div>
                         </div>
@@ -190,10 +190,6 @@
             </div>
 
         </div>
-
-
-
->>>>>>> 80bc6c475037e9a8dcdf154d36b1a646d71f0846
 
 
     <!-- Register popup html source start -->

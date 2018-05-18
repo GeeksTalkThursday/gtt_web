@@ -30,38 +30,38 @@
 
 {{--</footer>--}}
 
-<footer class="footer" >
-    <div class="main-content">
-        <div class="main-content-wrapper">
-            <div class="columns column-2">
-                <p><h1>Logo</h1></p>
-              <p>Geek Talk Thursday</p>
-            </div>
-            <div class="columns column-2">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Join</a></li>
-                    <li><a href="#">Authors</a></li>
-                    <li><a href="#">Posts</a></li>
+{{--<footer class="footer" >--}}
+    {{--<div class="main-content">--}}
+        {{--<div class="main-content-wrapper">--}}
+            {{--<div class="columns column-2">--}}
+                {{--<p><h1>Logo</h1></p>--}}
+              {{--<p>Geek Talk Thursday</p>--}}
+            {{--</div>--}}
+            {{--<div class="columns column-2">--}}
+                {{--<ul>--}}
+                    {{--<li><a href="#">Home</a></li>--}}
+                    {{--<li><a href="#">Login</a></li>--}}
+                    {{--<li><a href="#">Join</a></li>--}}
+                    {{--<li><a href="#">Authors</a></li>--}}
+                    {{--<li><a href="#">Posts</a></li>--}}
 
-                </ul>
-            </div>
-            <div class="columns column-2">
-                <p>Contact Us</p>
-                <ul class="social-footer">
-                <li><a target="_blank" href="http://www.facebook.com/pages/Codrops/159107397912"><i class="fa fa-bitbucket"></i></a></li>
-                <li><a target="_blank" href="http://www.twitter.com/appslab"><i class="fa fa-twitter"></i></a></li>
-                <li><a target="_blank" href="https://github.com/GeeksTalk/gtt_web"><i class="fa fa-github"></i></a></li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="content-b">
-                        <p style="text-align: center; padding: 10px;" >{{date('Y')." ".env('APP_NAME')}} | Powered By <a style="color:cyan; text-decoration: none;" href="http://www.appslab.co.ke" target="_blank">App:Lab KE</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="columns column-2">--}}
+                {{--<p>Contact Us</p>--}}
+                {{--<ul class="social-footer">--}}
+                {{--<li><a target="_blank" href="http://www.facebook.com/pages/Codrops/159107397912"><i class="fa fa-bitbucket"></i></a></li>--}}
+                {{--<li><a target="_blank" href="http://www.twitter.com/appslab"><i class="fa fa-twitter"></i></a></li>--}}
+                {{--<li><a target="_blank" href="https://github.com/GeeksTalk/gtt_web"><i class="fa fa-github"></i></a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-12 col-md-12">--}}
+                    {{--<div class="content-b">--}}
+                        {{--<p style="text-align: center; padding: 10px;" >{{date('Y')." ".env('APP_NAME')}} | Powered By <a style="color:cyan; text-decoration: none;" href="http://www.appslab.co.ke" target="_blank">App:Lab KE</a> </p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</footer>--}}

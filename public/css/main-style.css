@@ -3060,9 +3060,14 @@ padding-top: 7px;
 .footer ul li{
     margin-bottom: 5px
 }
-ul.footer-adress li {
+ul.footer-address li {
     margin-bottom: -4px;
+	padding: 5px;
+	display: block;
+	color: #2A2A2A;
 }
+
+
 .footer ul li a{
 color: #535353;
 font-weight: 500;
