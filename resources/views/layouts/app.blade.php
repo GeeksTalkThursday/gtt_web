@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
-                                <h4>Porpular</h4>
+                                <h4>Popular</h4>
                                 <div class="footer-title-line"></div>
                                 <ul class="footer-blog">
 
@@ -180,8 +180,8 @@
                         <div class="bottom-menu pull-right"> 
                             <ul> 
                                 <li><a class="wow fadeInUp animated" href="/" data-wow-delay="0.2s">Home</a></li>
-                                <li><a class="wow fadeInUp animated" href="#" data-modal="registerModal" data-wow-delay="0.3s">Register</a></li>
-                                <li><a class="wow fadeInUp animated" href="#" data-modal="loginModal" data-wow-delay="0.4s">Login</a></li>
+                                <li><a class="wow fadeInUp animated" data-modal="registerModal" data-wow-delay="0.3s">Register</a></li>
+                                <li><a class="wow fadeInUp animated" data-modal="loginModal" data-wow-delay="0.4s">Login</a></li>
                                 <li><a class="wow fadeInUp animated" href="/contact" data-wow-delay="0.6s">Contact</a></li>
                             </ul> 
                         </div>

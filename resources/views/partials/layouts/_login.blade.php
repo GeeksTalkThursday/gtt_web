@@ -57,7 +57,7 @@
                             {{ __('Forgot Your Password?') }}
                         </a><br>
 
-                        <p class="txt-center">Don't you have an account yet? <a href="index4.html#" data-modal="registerModal">Register</a></p>
+                        <p class="txt-center">Don't you have an account yet? <a  data-modal="registerModal">Register</a></p>
                     </div>
                 </div>
             </div>

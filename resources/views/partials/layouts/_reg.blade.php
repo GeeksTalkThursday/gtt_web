@@ -66,7 +66,7 @@
                     </div>
                 </form>
                 <div class="frm-row">
-                    <p class="txt-center">Do you already have an account? <a href="index4.html#" data-modal="loginModal">Login</a></p>
+                    <p class="txt-center">Do you already have an account? <a  data-modal="loginModal">Login</a></p>
                 </div>
             </div>
         </div>
