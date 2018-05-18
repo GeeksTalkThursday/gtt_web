@@ -571,6 +571,8 @@ $('#fileImage-three').on( 'change', function(){
     });
  </script>
 
+ @yield('scripts')
+
     {!! Toastr::render() !!}
   </body>
 </html>

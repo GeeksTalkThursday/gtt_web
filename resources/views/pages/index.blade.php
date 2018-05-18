@@ -47,50 +47,40 @@
                     <div class="content-timeline">
                         <!--Timeline header area start -->
                         <div class="post-list-header">
-                            <span class="post-list-title">Latest stories</span>
-                            <select class="frm-input">
-                                @foreach($categories as $category)
-                                    <option value="{{$category->category}}">{{$category->category}}</option>
-                                @endforeach
-                            </select>
+                            <span class="post-list-title">Latest</span>
+                            {{--<select class="frm-input">--}}
+                                {{--@foreach($categories as $category)--}}
+                                    {{--<option value="{{$category->category}}">{{$category->category}}</option>--}}
+                                {{--@endforeach--}}
+                            {{--</select>--}}
                         </div>
-                        <!--Timeline header area end -->
-
 
                         <!--Timeline items start -->
-                        <div class="timeline-items">
+                        <div class="post-lists">
                         @foreach($posts as $post)
-                            <div class="timeline-item">
-                                <div class="timeline-left">
-                                    <div class="timeline-left-wrapper">
-                                        <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category" data-zebra-tooltip title="{{$post->category->category}}"><i class="material-icons">&#xE894;</i></a>
-                                        <span class="timeline-date">
-                                        @php
-                                            $created = new \Carbon\Carbon($post->created_at);
-                                            $now = \Carbon\Carbon::now();
-                                        @endphp
-                                    {{$created->diff($now)->days < 1 ? 'today': $created->diffForHumans($now)}}</span>
-                                    </div>
-                                </div>
-                                <div class="timeline-right">
-                                    <div class="timeline-post-image">
-                                        <a href="{{route('blog.single',$post->slug)}}">
-                                            <img src="{{ asset('images/posts/'.$post->thumbnail) }}" width="260">
-                                        </a>
-                                    </div>
-                                    <div class="timeline-post-content">
-                                        <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category-name">{{$post->category->category}}</a>
-                                        <a href="{{route('blog.single',$post->slug)}}">
-                                            <h3 class="timeline-post-title">{{$post->title}}</h3>
-                                        </a>
-                                        <div class="timeline-post-info">
-                                            <a href="{{route('blog.single',$post->slug)}}" class="author">{{$post->admin->name}}</a>
-                                            <span class="dot"></span>
-                                            <span class="comment">32 comments</span>
+                                <div class="columns column-3">
+                                    <a href="{{route('blog.single',$post->slug)}}">
+                                        <div class="post-list-item">
+                                            <div class="post-top">
+                                                <img class="post-image" src="{{ asset('images/posts/'.$post->thumbnail) }}">
+                                                <h3 class="post-title">
+                                                    <a href="{{route('blog.single',$post->slug)}}"><span>{{ucwords($post->title)}}</span></a>
+                                                </h3>
+                                            </div>
+                                            <div class="post-bottom">
+                                                <div class="post-author-box">
+                                                    <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category-name">{{ mb_strimwidth(strtoupper($post->category->category),0,24) }}</a>
+                                                    {{--<span class="post-date item-spacing"><i class="fa fa-eye"></i></span>--}}
+                                                    {{--<span class="post-date item-spacing">|</span>--}}
+                                                    <span class="post-date item-spacing"><i class=" item-spacing fa fa-comments"></i>{{ count($post->comments) }}</span>
+                                                    <span class="post-date item-spacing">|</span>
+                                                    <a href="{{route('blog.single',$post->slug)}}" class="author-name item-spacing"><i class="fa fa-user"></i> {{ucwords($post->admin->name)}}</a>
+                                                    <span class="post-date item-spacing"><i class="fa fa-calendar"></i> {{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
                         @endforeach
 
                         </div>
@@ -113,7 +103,7 @@
 
                         <div class="widget-item">
                             <div class="w-header">
-                                <div class="w-title">Carousel Posts</div>
+                                <div class="w-title">Glance</div>
                                 <div class="w-seperator"></div>
                             </div>
                             <div class="w-carousel-post">
@@ -122,7 +112,7 @@
                                     <div class="item">
                                         <a href="{{route('blog.single',$slide->slug)}}">
                                             <img src="{{ asset('images/posts/'.$slide->thumbnail) }}" width="300">
-                                            <span class="w-post-title">{{$slide->title}}</span>
+                                            <span class="w-post-title">{{ucwords($slide->title)}}</span>
                                         </a>
                                     </div>
                                 @endforeach
@@ -137,25 +127,22 @@
 
                         <div class="widget-item">
                             <div class="w-header">
-                                <div class="w-title">Editor's Picks</div>
+                                <div class="w-title">Latest Posts</div>
                                 <div class="w-seperator"></div>
                             </div>
                             <div class="w-boxed-post">
                                 <ul>
-                                    @php
-                                    $i = 1;
-                                    @endphp
                                 @foreach($porpulars as $porpular)
                                     <li>
                                         <a href="{{route('blog.single',$porpular->slug)}}" style="background-image: url({{ asset('images/posts/'.$porpular->thumbnail) }});">
                                             <div class="box-wrapper">
                                                 <div class="box-left">
-                                                    <span>{{$i++}}</span>
+                                                    <span>{{$loop->iteration}}</span>
                                                 </div>
                                                 <div class="box-right">
-                                                    <h3 class="p-title">{{$porpular->title}}</h3>
+                                                    <h3 class="p-title">{{ucwords($porpular->title)}}</h3>
                                                     <div class="p-icons">
-                                                        213 likes . 124 comments
+                                                        {{-- 213 likes . 124 comments --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,6 +155,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 

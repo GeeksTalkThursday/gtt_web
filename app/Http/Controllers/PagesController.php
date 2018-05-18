@@ -16,12 +16,16 @@ class PagesController extends Controller
 {
     public function index()
     {
-    	$category = Category::all();
-    	$slide = Post::orderBy('created_at','desc')->get()->take(4);
-    	$porpular = Post::inRandomOrder()->get()->take(4);
-    	$posts = Post::orderBy('created_at','desc')->paginate(10);
+//    	$category = Category::all();
+    	$slide = Post::with(['comments'])->orderBy('created_at','desc')->get()->take(4);
+    	$porpular = Post::with(['comments'])->inRandomOrder()->get()->take(4);
+    	$posts = Post::with(['comments'])->orderBy('created_at','desc')->paginate(10);
 
-    	return view('pages.index')->withCategories($category)->withSlides($slide)->withPosts($posts)->withPorpulars($porpular);
+    	return view('pages.index')
+            ->withCategories([])
+            ->withSlides($slide)
+            ->withPosts($posts)
+            ->withPorpulars($porpular);
     }
 
     public function posts()

@@ -3212,3 +3212,6 @@ padding: 10px;
 	background: linear-gradient(to right, #dc2430, #7b4397);
 	color: #fff;	
 }
+.item-spacing{
+	padding: 4px !important;
+}

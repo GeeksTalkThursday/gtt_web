@@ -14,9 +14,7 @@
     <!-- Left sidebar menu start -->
     @include('partials.layouts._left_nav')
     <!-- Left sidebar menu end -->
-
-    {{-- awesome hii tempalte ni wazuri sana, ata wametupa common tag place main staff zime anza --}}
-
+    
     <!--Main container start -->
     <main class="main-container">
             

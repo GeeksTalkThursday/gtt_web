@@ -6,8 +6,6 @@
 
     @include('partials._cropper')
 
-    @include('partials._tinymce')
-
     <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
@@ -109,8 +107,7 @@
                                 
                             </div>
 
-                      
-                      
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
@@ -127,4 +124,8 @@
        </div>
       </div>
 
-@stop
+    @section('scripts')
+        @include('partials._tinymce')
+        @endsection
+
+      @stop
