@@ -18,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layouts.app', function($view)
             {   
                 $tags = \App\Tag::all();
-                $view->with('tags_all', $tags);
+                $posts = \App\Post::inRandomOrder()->take(4)->get();
+
+                $view->with('tags_all', $tags)->withPosts($posts);
             });
     }
 

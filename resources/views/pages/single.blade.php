@@ -14,7 +14,8 @@
 				<article class="post-box">
 		    		<div class="post-overlay">
 		    			<div class="post-overlay-inner">
-			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{$post->category->category}}" rel="tag">{{$post->category->category}}</a>
+			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{$post->category->category}}" rel="tag">
+								{{$post->category->category}}</a>
 			    			<h1 class="post-title">{{$post->title}}</h1>
 			    			<div class="post-meta">
 			    				<div class="post-meta-author-info">
