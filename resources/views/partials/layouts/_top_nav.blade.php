@@ -10,7 +10,9 @@
             <!--logo start -->
             <div class="logo-box">
                 <h1>
-                    <a href="{{url('/')}}" class="logo"></a>
+                    <a href="{{url('/')}}" class="logo">
+                        <img style="width: 95px; height: auto" src="{{ asset('img/logo.png') }}" alt="">
+                    </a>
                 </h1>
             </div>
             <!--logo end -->

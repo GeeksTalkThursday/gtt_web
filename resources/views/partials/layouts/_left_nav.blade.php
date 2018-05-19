@@ -3,7 +3,9 @@
 
             <!-- side menu logo start -->
             <div class="sidebar-logo">
-                <a href="{{url('/')}}"></a>
+                <a href="{{url('/')}}">
+                    <img style="width: 75px; height: auto" src="{{ asset('img/1logo.png') }}" alt="">
+                </a>
                 <div class="sidebar-toggle-button">
                     <i class="material-icons">&#xE317;</i>
                 </div>
