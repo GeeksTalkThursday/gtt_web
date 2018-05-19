@@ -52,9 +52,16 @@ class PagesController extends Controller
     {
     	$category = Category::where('category',$category)->first();
     	$post = Post::where('category_id',$category->id)->paginate(10);
-    	$porpular = Post::inRandomOrder()->get()->take(4);
+    	$data= [
+    	    'count' =>count(Post::where('category_id',$category->id)->get()),
+            'categories'=>Category::all(),
+            'tags'=>Tag::all(),
+        ] ;
 
-    	return view('pages.category')->withPosts($post)->withCategory($category)->withPorpulars($porpular);
+    	return view('pages.category')
+            ->withPosts($post)
+            ->withCategory($category)
+            ->withData($data);
     }
 
     public function tag($slug)

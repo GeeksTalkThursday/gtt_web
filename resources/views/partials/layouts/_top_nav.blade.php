@@ -7,15 +7,33 @@
             </div>
             <!--sidebar menu toggler end -->
 
+
             <!--logo start -->
             <div class="logo-box">
                 <h1>
-                    <a href="{{url('/')}}" class="logo">
+                    <a href="{{url('/')}}" style="text-decoration: none" class="logo">
                         <img style="width: 95px; height: auto" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
                 </h1>
             </div>
             <!--logo end -->
+            <div class="header-menu">
+                <ul class="header-navigation" data-show-menu-on-mobile>
+                    <li><a href="{{ url('/') }}">
+                            <h3>GeeksTalkThursday</h3>
+                        </a></li>
+                    <li>
+                        <a href="{{ url('/') }}#" class="material-button submenu-toggle"><h3>Tutorials</h3></a>
+                        <div class="header-submenu">
+                            <ul>
+                                @foreach(\App\Category::all()->sortBy('category') as $item)
+                                    <li><a href="{{route('blog.category',$item->category)}}"><i class="fa fa-terminal"></i> {{ strtoupper($item->category) }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="header-menu">
 

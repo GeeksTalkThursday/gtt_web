@@ -11,9 +11,10 @@
 					<!-- article body start -->
 					<article class="article-wrapper">
 						<div class="article-content">
-							<h1 class="extra-title">Contact</h1>
+							<h1 class="extra-title">Contact Us</h1>
 							<div class="article-inner">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+								<p>We are here to help each other. Drop us a message on whatever you need or any improvement that we need to adjust.
+									<br>You can report bugs, spelling errors or request to be an author. Just drop as a message on the form below or info@appslab.co.ke</p>
 
 								<div class="contact-form">
 									<form id="contactFrom"  data-parsley-validate method="post" action="{{url('contact_form')}}">
@@ -33,11 +34,11 @@
 										<div class="frm-row">
 											<input type="text" name="subject" placeholder="Subject" required="" class="frm-input">
 										</div>
-										<dic class="frm-row">
+										<div class="frm-row">
 											<textarea class="frm-input" rows="8" required="" name="message" placeholder="Enter your message"></textarea>
-										</dic>
+										</div>
 										<div class="frm-row send-button">
-											<button type="submit" class="frm-button material-button">Send message</button>
+											<button type="submit" class="frm-button material-button pull-right">Send message</button>
 										</div>
 									</form>
 								</div>
@@ -53,17 +54,7 @@
 				</div>
 				<div class="content-sidebar">
 					<div class="sidebar_inner">
-						
 						<div class="sidebar-spacer"></div>
-						<div class="sidebar-button-group">
-					{{-- 		<a href="#" class="sidebar-buttons material-button"><i class="material-icons">&#xE851;</i><span class="btn-label">About Us</span></a>
-							<a href="#" class="sidebar-buttons material-button"><i class="material-icons">&#xE866;</i><span class="btn-label">Authors</span></a>
-							<a href="#" class="sidebar-buttons material-button"><i class="material-icons">&#xE87F;</i><span class="btn-label">Privacy Policy</span></a> --}}
-							<a href="#" class="sidebar-buttons material-button active"><i class="material-icons">&#xE894;</i><span class="btn-label">Contacts</span></a>
-						</div>
-
-						<div class="sidebar-spacer"></div>
-
 						<a href="index4.html#" class="widget-ad-box">
                             <img src="/img/adbox300x250.png" width="300" height="250">
                         </a>

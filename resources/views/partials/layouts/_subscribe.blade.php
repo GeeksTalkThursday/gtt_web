@@ -6,7 +6,7 @@
                 <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
             </div>
             <div class="m-modal-body">
-                <p>Submit to our newsletter to receive exclusive stories delivered to you inbox!</p>
+                <p>Get notification about coming tutorials and meetups.</p>
                 <form action="{{route('subscribe')}}" method="POST" data-parsley-validate>{{ csrf_field() }}
                     <div class="frm-row">
                         <input required="" class="frm-input" type="email" name="email" placeholder="Email address">

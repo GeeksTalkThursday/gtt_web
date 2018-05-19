@@ -10,31 +10,31 @@
                 
                 <div class="owl-carousel" id="postCarousel">
 
-                @foreach($slides as $slide)
+                {{--@foreach($slides as $slide)--}}
                      <div class="item">
 
-                        <article class="post-box" style="background-image: url({{ asset('images/posts/'.$slide->thumbnail) }});">
+                        <article class="post-box" style="background-image: url({{ asset('img/bg.jpg')}});">
                             <div class="post-overlay">
                                 <div class="post-overlay-inner">
-                                    <a href="{{route('blog.category',$slide->category->category)}}" class="post-category" title="Title of blog post" rel="tag">{{$slide->category->category}}</a>
-                                    <h3 class="post-title">{{$slide->title}}</h3>
+{{--                                    <a href="{{route('blog.category',$slide->category->category)}}" class="post-category" title="Title of blog post" rel="tag">{{$slide->category->category}}</a>--}}
+{{--                                    <h3 class="post-title">{{$slide->title}}</h3>--}}
                                     <div class="post-meta">
                                         
-                                        <div class="post-meta-author-info">
-                                            <span class="middot">·</span>
-                                            <span class="post-meta-date">
-                                                <abbr class="published updated" title="December 4, 2017">{{date('M j, Y ',strtotime($slide->created_at))}}</abbr>
-                                            </span>
-                                        </div>
+                                        {{--<div class="post-meta-author-info">--}}
+                                            {{--<span class="middot">·</span>--}}
+                                            {{--<span class="post-meta-date">--}}
+                                                {{--<abbr class="published updated" title="December 4, 2017">{{date('M j, Y ',strtotime($slide->created_at))}}</abbr>--}}
+                                            {{--</span>--}}
+                                        {{--</div>--}}
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('blog.single',$slide->slug)}}" class="post-overlayLink"></a>
+{{--                            <a href="{{route('blog.single',$slide->slug)}}" class="post-overlayLink"></a>--}}
                         </article>
 
                     </div>
 
-                @endforeach
+                {{--@endforeach--}}
                     
                     
                 </div>
@@ -56,34 +56,7 @@
                         </div>
 
                         <!--Timeline items start -->
-                        <div class="post-lists">
-                        @foreach($posts as $post)
-                                <div class="columns column-3">
-                                    <a href="{{route('blog.single',$post->slug)}}">
-                                        <div class="post-list-item">
-                                            <div class="post-top">
-                                                <img class="post-image" src="{{ asset('images/posts/'.$post->thumbnail) }}">
-                                                <h3 class="post-title">
-                                                    <a href="{{route('blog.single',$post->slug)}}"><span>{{ucwords($post->title)}}</span></a>
-                                                </h3>
-                                            </div>
-                                            <div class="post-bottom">
-                                                <div class="post-author-box">
-                                                    <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category-name">{{ mb_strimwidth(strtoupper($post->category->category),0,24) }}</a>
-                                                    {{--<span class="post-date item-spacing"><i class="fa fa-eye"></i></span>--}}
-                                                    {{--<span class="post-date item-spacing">|</span>--}}
-                                                    <span class="post-date item-spacing"><i class=" item-spacing fa fa-comments"></i>{{ count($post->comments) }}</span>
-                                                    <span class="post-date item-spacing">|</span>
-                                                    <a href="{{route('blog.single',$post->slug)}}" class="author-name item-spacing"><i class="fa fa-user"></i> {{ucwords($post->admin->name)}}</a>
-                                                    <span class="post-date item-spacing"><i class="fa fa-calendar"></i> {{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                        @endforeach
-
-                        </div>
+                        @include('partials.tutorials')
                         <!--Timeline items end -->
 
                         <!--Data load more button start  -->
