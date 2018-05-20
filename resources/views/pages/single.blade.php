@@ -14,21 +14,17 @@
 				<article class="post-box">
 		    		<div class="post-overlay">
 		    			<div class="post-overlay-inner">
-			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{$post->category->category}}" rel="tag">{{$post->category->category}}</a>
-			    			<h1 class="post-title">{{$post->title}}</h1>
+			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{ucwords($post->category->category)}}" rel="tag">{{ucwords($post->category->category)}}</a>
+			    			<h1 class="post-title bg-opacity">{{ucwords($post->title)}}</h1>
 			    			<div class="post-meta">
 			    				<div class="post-meta-author-info">
 			    					<span class="post-meta-author-name">
-			    						<a href="#" title="Posts by John Doe" rel="author">{{$post->admin->admin}}</a>
+			    						<a href="#" title="{{ucwords($post->admin->admin)}}" rel="author">{{ucwords($post->admin->admin)}}</a>
 			    					</span>
 			    					<span class="middot">·</span>
 			    					<span class="post-meta-date">
-			    						<abbr class="published updated" title="December 4, 2017">
-			    							@php
-	                                            $created = new \Carbon\Carbon($post->created_at);
-	                                            $now = \Carbon\Carbon::now();
-	                                        @endphp
-	                                    {{$created->diff($now)->days < 1 ? 'today': $created->diffForHumans($now)}}
+			    						<abbr class="published updated bg-opacity"  title="{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}">
+			    							{{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}
 	                                	</abbr>
 			    					</span>
 			    				</div>
@@ -37,14 +33,10 @@
 		    		</div>
 		    	</article>
 			</div>
-			<!-- Detail parallax end -->
-
 		</section>
 		<section class="main-content">
 			<div class="main-content-wrapper">
 				<div class="content-body">
-
-					<!-- article body start -->
 					<article class="article-wrapper">
 						<div class="article-header">
 							<div class="breadcrumb">
@@ -212,16 +204,10 @@
 									</div>
 
 								@endforelse
-
-
 								</div>
 							</div>
-							<!-- article comment area start -->
-
 						</div>
 					</article>
-					
-
 				</div>
 				<div class="content-sidebar">
 					<div class="sidebar_inner">
