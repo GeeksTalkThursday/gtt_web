@@ -88,7 +88,7 @@ var setStickySidebar = function(){
 	{
 		var sidebar = $('.sidebar_inner');
 		var sidebarHeight = sidebar.outerHeight();
-		var windowHeight = $(window).height()-400;
+		var windowHeight = $(window).height()-360;
 		var wrapperTopPos = $('.main-content').position().top;
 		var scrollTop = $(this).scrollTop();
 

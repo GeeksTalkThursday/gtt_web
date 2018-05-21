@@ -15,6 +15,7 @@
 							<div class="article-inner">
 								<p>We are here to help each other. Drop us a message on whatever you need or any improvement that we need to adjust.
 									<br>You can report bugs, spelling errors or request to be an author. Just drop as a message on the form below or info@appslab.co.ke</p>
+									@include('partials.message._message')
 
 								<div class="contact-form">
 									<form id="contactFrom"  data-parsley-validate method="post" action="{{url('contact_form')}}">
