@@ -1,8 +1,17 @@
-
+    @if(Request::is('register'))
+        <style type="text/css">
+            body, html{
+                background-color: black!important;
+                color: black;
+            }
+        </style>
+    @endif
         <div class="m-modal-content small">
             <div class="m-modal-header">
                 <h3 class="m-modal-title">Register</h3>
-                <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+                @if(!Request::is('register'))
+                    <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+                @endif
             </div>
             <div class="m-modal-body">
                 {{-- hii iko kwa login LREDy --}}
@@ -51,14 +60,12 @@
                         <input class="frm-input" type="password" name="password_confirmation" placeholder="Confirm Password">
                     </div>
                     <div class="frm-row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right"></label>
-                        <div class="col-md-6 ">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="subscribe" {{ old('subscribe') ? 'checked' : '' }}> Subscribe to our notifications
-                                </label>
-                            </div>
+                        <div class="col-xs-4 ">
+                            <input type="checkbox" name="subscribe" {{ old('subscribe') ? 'checked' : 'checked' }} id="cbx" style="display:none"> 
+                            <label for="cbx" class="toggle"><span></span></label>  
+                                     
                         </div>
+                        <label for="password-confirm" class="col-xs-8 col-form-label text-md-right">Subscribe to our notifications</label>
                     </div>
                     <div class="frm-row">
                         <button class="frm-button material-button full" type="submit">Register</button>

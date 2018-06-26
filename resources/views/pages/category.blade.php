@@ -66,8 +66,8 @@
 
 						<div class="widget-item">
 							<div class="w-header">
-								<div class="w-title">Editor's Picks</div>
-								<div class="w-seperator"></div>
+								{{-- <div class="w-title">Related</div> --}}
+								{{-- <div class="w-seperator"></div> --}}
 							</div>
 							<div class="w-boxed-post">
 								<ul>
@@ -95,11 +95,11 @@
 							</div>
 						</div>
 
-						{{-- <div class="seperator"></div>
+						<div class="seperator"></div>
 
 						<a href="list-timeline.html#" class="widget-ad-box">
 							<img src="/img/adbox300x250.png" width="300" height="250">
-						</a> --}}
+						</a>
 
 					</div>
 				</div>

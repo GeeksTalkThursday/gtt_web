@@ -1,8 +1,18 @@
+        @if(Request::is('login'))
+            <style type="text/css">
+                body, html{
+                    background-color: black!important;
+                    color: black;
+                }
+            </style>
+        @endif
 
         <div class="m-modal-content small">
             <div class="m-modal-header">
                 <h3 class="m-modal-title">Login</h3>
-                <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+                @if(!Request::is('login'))
+                    <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+                @endif
             </div>
             <div class="m-modal-body">
                 <div class="m-modal-social-logins">

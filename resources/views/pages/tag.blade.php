@@ -112,11 +112,11 @@
 							</div>
 						</div>
 
-						{{-- <div class="seperator"></div>
+						<div class="seperator"></div>
 
 						<a href="list-timeline.html#" class="widget-ad-box">
 							<img src="/img/adbox300x250.png" width="300" height="250">
-						</a> --}}
+						</a>
 
 					</div>
 				</div>
