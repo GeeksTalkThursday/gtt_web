@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Bookmark;
 use App\Category;
 use App\Post;
 use App\Tag;
-use App\Bookmark;
-use Mail;
 use Auth;
-use Yuansir\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use Mail;
 use View;
+use Yuansir\Toastr\Facades\Toastr;
 
 class PagesController extends Controller
 {
     public function index()
     {
-//    	$category = Category::all();
-    	$slide = Post::with(['comments'])->orderBy('created_at','desc')->get()->take(4);
-    	$porpular = Post::with(['comments'])->inRandomOrder()->get()->take(4);
-    	$posts = Post::with(['comments'])->orderBy('created_at','desc')->paginate(10);
 
-    	return view('pages.index')
+//        $category = Category::all();
+        $slide = Post::with(['comments'])->orderBy('created_at', 'desc')->get()->take(4);
+        $porpular = Post::with(['comments'])->inRandomOrder()->get()->take(4);
+        $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('pages.index')
             ->withCategories([])
             ->withSlides($slide)
             ->withPosts($posts)
@@ -35,17 +36,17 @@ class PagesController extends Controller
 
     public function single($slug)
     {
-    	$post = Post::where('slug',$slug)->first();
-    	$slide = Post::orderBy('created_at','desc')->get()->take(4);
-    	$pop = Post::inRandomOrder()->get()->take(3);
-    	$porpular = Post::inRandomOrder()->get()->take(5);
+        $post = Post::where('slug', $slug)->first();
+        $slide = Post::orderBy('created_at', 'desc')->get()->take(4);
+        $pop = Post::inRandomOrder()->get()->take(3);
+        $porpular = Post::inRandomOrder()->get()->take(5);
 
         if (Auth::check()) {
-            $book = Bookmark::where('user_id',Auth::user()->id)->where('post_id',$post->id)->first();
+            $book = Bookmark::where('user_id', Auth::user()->id)->where('post_id', $post->id)->first();
             return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop)->withBook($book);
         }
 
-    	return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop);
+        return view('pages.single')->withPost($post)->withPorpulars($porpular)->withSlides($slide)->withPops($pop);
     }
 
     public function category($category)
@@ -66,17 +67,17 @@ class PagesController extends Controller
 
     public function tag($slug)
     {
-    	$current = Tag::where('name',$slug)->first();
+        $current = Tag::where('name', $slug)->first();
 
-    	$porpular = Post::inRandomOrder()->get()->take(4);
+        $porpular = Post::inRandomOrder()->get()->take(4);
 
-        $post = Post::whereHas('tags', function ($query) use($slug) {
-                    $query->where('name', $slug);
-                })
-        	->orderBy('created_at','desc')
+        $post = Post::whereHas('tags', function ($query) use ($slug) {
+            $query->where('name', $slug);
+        })
+            ->orderBy('created_at', 'desc')
             ->paginate(10);
         if ($post->count() == 0) {
-        	return redirect()->back();
+            return redirect()->back();
         }
 
         return view('pages.tag')->withPosts($post)->withTagged($current)->withPorpulars($porpular);
@@ -85,19 +86,19 @@ class PagesController extends Controller
     public function search()
     {
         $key = \Request::get('qq');
-        $post = Post::with('Category')->where('title','like','%'.$key.'%')
-        ->orWhereHas('Category', function ($q) use ($key){
-            $q->where('category','like','%'.$key.'%');
-        })
-        ->paginate(10);
+        $post = Post::with('Category')->where('title', 'like', '%' . $key . '%')
+            ->orWhereHas('Category', function ($q) use ($key) {
+                $q->where('category', 'like', '%' . $key . '%');
+            })
+            ->paginate(10);
         if (!count($post)) {
 
-            Toastr::warning('Search Results Returned nothing', $title = 'No Search Result', $options = ["progressBar"=>true]);
+            Toastr::warning('Search Results Returned nothing', $title = 'No Search Result', $options = ["progressBar" => true]);
             return redirect('/');
         }
         $porpular = Post::inRandomOrder()->get()->take(4);
 
-        Toastr::success('Search results', $title = 'Search', $options = ["progressBar"=>true]);
+        Toastr::success('Search results', $title = 'Search', $options = ["progressBar" => true]);
 
         return view('pages.search')->withPosts($post)->withSearched($key)->withPorpulars($porpular);
     }
@@ -105,11 +106,11 @@ class PagesController extends Controller
     public function preSearch($key)
     {
         // $key = 'php';
-        $post = Post::with('Category')->where('title','like','%'.$key.'%')
-        ->orWhereHas('Category', function ($q) use ($key){
-            $q->where('category','like','%'.$key.'%');
-        })
-        ->take(6)->get();
+        $post = Post::with('Category')->where('title', 'like', '%' . $key . '%')
+            ->orWhereHas('Category', function ($q) use ($key) {
+                $q->where('category', 'like', '%' . $key . '%');
+            })
+            ->take(6)->get();
         if (!count($post)) {
             return response()->json('nosearch');
         }
@@ -118,10 +119,10 @@ class PagesController extends Controller
 
     public function contact()
     {
-    	return view('pages.general.contact');
+        return view('pages.general.contact');
     }
 
-    public function EmailContact(Request $request )
+    public function EmailContact(Request $request)
     {
 
         //validate data
@@ -129,27 +130,25 @@ class PagesController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'subject' => 'required|string|max:20',
-            'message' => 'required|string|max:500'
-            ));
+            'message' => 'required|string|max:500',
+        ));
 
         $name = $request->name;
         $content = $request->message;
         $email = $request->email;
         $subject = $request->subject;
 
+        Mail::send('emails.contact', ['name' => $name, 'content' => $content, 'subject' => $subject], function ($message) use ($email, $name, $subject) {
 
-        Mail::send('emails.contact', ['name' => $name, 'content' => $content,'subject'=>$subject], function ($message) use ($email,$name,$subject)
-        {
-
-            $message->from(env('MAIL_ACCOUNT'),$email);
+            $message->from(env('MAIL_ACCOUNT'), $email);
 
             $message->to(env('MAIL_ACCOUNT'));
 
-            $message->subject($name.', '.env('APP_NAME').' '.'Contact');
+            $message->subject($name . ', ' . env('APP_NAME') . ' ' . 'Contact');
 
         });
 
-        Toastr::success('Contact Message successfully sent', $title = 'Contact Email', $options = ["progressBar"=>true]);
+        Toastr::success('Contact Message successfully sent', $title = 'Contact Email', $options = ["progressBar" => true]);
 
         return redirect()->back();
 
