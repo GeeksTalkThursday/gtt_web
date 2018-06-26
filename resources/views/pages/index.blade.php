@@ -94,10 +94,6 @@
 
                         <div class="seperator"></div>
 
-                        <a href="index4.html#" class="widget-ad-box">
-                            <img src="/img/adbox300x250.png" width="300" height="250">
-                        </a>
-
                         <div class="widget-item">
                             <div class="w-header">
                                 <div class="w-title">Latest Posts</div>
@@ -125,6 +121,14 @@
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="seperator"></div>
+                        
+                        <a href="index4.html#" class="widget-ad-box">
+                            <img src="/img/adbox300x250.png" width="300" height="250">
+                        </a>
+
+
 
                     </div>
                 </div>
