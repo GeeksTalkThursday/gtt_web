@@ -82,11 +82,11 @@
                   </li>
                   {{-- <li><a><i class="fa fa-table"></i> Tables </span></a> --}}
                     
-                  </li>
+                  {{--</li>--}}
                   {{-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation </span></a> --}}
                     
-                  </li>
-                  <li><a class="{{ Request::is('manageMailChimp') ? "active" : "" }}" href="{{url('/manageMailChimp')}}"><i class="fa fa-clone"></i>Send Campaigns </span></a>
+                  {{--</li>--}}
+                  <li><a class="{{ Request::is('manageMailChimp') ? "active" : "" }}" href="{{url('/manageMailChimp')}}"><i class="fa fa-clone"></i><span>Send Campaigns </span></a>
                     
                   </li>
                 </ul>

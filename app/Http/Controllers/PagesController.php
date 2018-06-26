@@ -80,7 +80,10 @@ class PagesController extends Controller
             return redirect()->back();
         }
 
-        return view('pages.tag')->withPosts($post)->withTagged($current)->withPorpulars($porpular);
+        return view('pages.tag')
+            ->withPosts($post)
+            ->withTagged($current)
+            ->withPorpulars($porpular);
     }
 
     public function search()

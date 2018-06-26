@@ -5,7 +5,8 @@
                         <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
                                 <img style="width: 175px; height: auto" src="{{ asset('img/logo.png') }}" alt="">
-                                <p>{{env('APP_NAME')}} is <b>Wakanda Community</b> for developers, Learn to</p>
+                                <p>{{env('APP_NAME')}} is <b> a Tech Community</b> for developers to Learn, Engage, Share knowledge and a lots of commits
+                                    <br> #LetTheCommitsSpeak</p>
                             </div>
                             <div class="social">
                                 <ul>

@@ -36,7 +36,7 @@
 					<div class="content-timeline">
 
 						<div class="post-list-header">
-							<span class="post-list-title">{{ strtoupper($category->category) }}</span>
+							<span class="post-list-title">{{ strtoupper($category->category) }} Tutorials</span>
 						</div>
 
 						<!--Timeline items start -->

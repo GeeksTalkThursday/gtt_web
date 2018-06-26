@@ -48,6 +48,7 @@
                         <!--Timeline header area start -->
                         <div class="post-list-header">
                             <span class="post-list-title">Latest</span>
+                            <div class="footer-title-line"></div>
                             {{--<select class="frm-input">--}}
                                 {{--@foreach($categories as $category)--}}
                                     {{--<option value="{{$category->category}}">{{$category->category}}</option>--}}
@@ -91,8 +92,8 @@
                                 @endforeach
                             </div>
                         </div>
-
-                        <div class="seperator"></div>
+                            <div class="footer-title-line"></div>
+                        {{--<div class="seperator"></div>--}}
 
                         <div class="widget-item">
                             <div class="w-header">
@@ -127,8 +128,6 @@
                         <a href="index4.html#" class="widget-ad-box">
                             <img src="/img/adbox300x250.png" width="300" height="250">
                         </a>
-
-
 
                     </div>
                 </div>
