@@ -13,7 +13,7 @@
                 {{--@foreach($slides as $slide)--}}
                      <div class="item">
 
-                        <article class="post-box" style="background-image: url({{ asset('img/bg.jpg')}});">
+                        <article class="post-box" style="background-image: url({{ asset('img/bg1.jpg')}});">
                             <div class="post-overlay">
                                 <div class="post-overlay-inner">
 {{--                                    <a href="{{route('blog.category',$slide->category->category)}}" class="post-category" title="Title of blog post" rel="tag">{{$slide->category->category}}</a>--}}
