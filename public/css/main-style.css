@@ -496,7 +496,7 @@ a{
  	color: #FFF;
  }
  .sidebar-menu > li a.twitter{
- 	background-color: #03A9F4;
+ 	background-color: #292C32;
  	color: #FFF;
  }
  .sidebar-menu > li a.google-plus{
@@ -2642,10 +2642,10 @@ textarea.frm-input{
 	border-radius: 2px;
 }
 .frm-button.facebook{
-	background: #226abc;
+	background: #292C32;
 }
 .frm-button.twitter{
-	background: #00abf0;
+	background: #4300AA;
 }
 .frm-button.google{
 	background: #d1432b;
@@ -3226,3 +3226,5 @@ padding: 10px;
 	padding: 8px;
 	background-color:rgba(0, 0, 0, 0.65);
 }
+
+

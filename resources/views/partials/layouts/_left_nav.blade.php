@@ -69,7 +69,7 @@
                 </li>
                 <li>
                     <a href="{{ route('social.oauth', 'google') }}" class="google-plus material-button">
-                        <span class="menu-label"><i class="fa fa-google"></i> Google </span>
+                        <span class="menu-label"><img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/></i> Google </span>
                     </a>
                 </li> 
             </ul>

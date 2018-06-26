@@ -1,5 +1,4 @@
-<div class="m-modal-box" id="registerModal">
-        <div class="m-modal-overlay"></div>
+
         <div class="m-modal-content small">
             <div class="m-modal-header">
                 <h3 class="m-modal-title">Register</h3>
@@ -16,7 +15,7 @@
                         <a href="{{ route('social.oauth', 'bitbucket') }}" class="frm-button twitter material-button full" type="button">{{-- <i class="fa fa-bitbucket"></i> --}} Bitbucket</a>
                     </div>
                     <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button"><i class="fa fa-google"></i> Google</a>
+                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button"><img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/> Google</a>
                     </div>
                 </div>
 
@@ -70,4 +69,3 @@
                 </div>
             </div>
         </div>
-    </div>

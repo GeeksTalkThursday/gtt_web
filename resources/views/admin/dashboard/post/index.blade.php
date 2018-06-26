@@ -64,7 +64,7 @@
 	                          <td>{{$post->category->category}}</td>
 	                          <td>
 	                            <a href="{{route('post.edit',$post->slug)}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                              <a href="{{route('post.show',$post->slug)}}" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> View </a>
+                              <a href="{{route('post.show',$post->slug)}}" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> View </a>
 	                          </td>
 	                        </tr>
                         @endforeach

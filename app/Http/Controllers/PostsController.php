@@ -152,7 +152,7 @@ class PostsController extends Controller
                 $oldFilename = $post->thumbnail;
                 $filename1 = public_path().'/images/post/'.$oldFilename;
                \File::delete($filename1);
-           }
+            }
 
            $post->thumbnail = $image_name;
         }
