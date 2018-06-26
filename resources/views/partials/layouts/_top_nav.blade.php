@@ -39,21 +39,7 @@
 
                 <!-- header left menu start -->
                 <ul class="header-navigation" data-show-menu-on-mobile>
-                    {{-- <li>
-                        <a href="#" class="material-button ">HOME</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">POSTS</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">VIDEO</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">EXTRA PAGES</a>
-                    </li> --}}
                 </ul>
-                <!-- header left menu end -->
-
             </div>
             <div class="header-right with-seperator">
 
