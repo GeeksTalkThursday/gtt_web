@@ -65,9 +65,7 @@
                         <div class="header-submenu">
                             <ul>
                                 <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>
-                                <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>
                                 <li>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -77,7 +75,6 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
