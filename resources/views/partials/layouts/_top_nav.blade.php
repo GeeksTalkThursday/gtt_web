@@ -64,7 +64,7 @@
                         <a href="index4.html#" class="material-button submenu-toggle"><i class="material-icons">&#xE7FD;</i> <span class="hide-on-tablet">{{ Auth::user()->name }}</span></a>
                         <div class="header-submenu">
                             <ul>
-                                <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>
+{{--                                <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>--}}
                                 <li>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
