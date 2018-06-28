@@ -14,22 +14,19 @@
 				<article class="post-box">
 		    		<div class="post-overlay">
 		    			<div class="post-overlay-inner">
-			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{$post->category->category}}" rel="tag">
-								{{$post->category->category}}</a>
-			    			<h1 class="post-title">{{$post->title}}</h1>
+
+			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{ucwords($post->category->category)}}" rel="tag">{{ucwords($post->category->category)}}</a>
+			    			<h1 class="post-title bg-opacity">{{ucwords($post->title)}}</h1>
+>>>>>>> 496694ffd56caeb2adf39a11b28c2d28b54969f6
 			    			<div class="post-meta">
 			    				<div class="post-meta-author-info">
 			    					<span class="post-meta-author-name">
-			    						<a href="#" title="Posts by John Doe" rel="author">{{$post->admin->admin}}</a>
+			    						<a href="#" title="{{ucwords($post->admin->admin)}}" rel="author">{{ucwords($post->admin->admin)}}</a>
 			    					</span>
 			    					<span class="middot">·</span>
 			    					<span class="post-meta-date">
-			    						<abbr class="published updated" title="December 4, 2017">
-			    							@php
-	                                            $created = new \Carbon\Carbon($post->created_at);
-	                                            $now = \Carbon\Carbon::now();
-	                                        @endphp
-	                                    {{$created->diff($now)->days < 1 ? 'today': $created->diffForHumans($now)}}
+			    						<abbr class="published updated bg-opacity"  title="{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}">
+			    							{{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}
 	                                	</abbr>
 			    					</span>
 			    				</div>
@@ -38,14 +35,10 @@
 		    		</div>
 		    	</article>
 			</div>
-			<!-- Detail parallax end -->
-
 		</section>
 		<section class="main-content">
 			<div class="main-content-wrapper">
 				<div class="content-body">
-
-					<!-- article body start -->
 					<article class="article-wrapper">
 						<div class="article-header">
 							<div class="breadcrumb">
@@ -60,7 +53,8 @@
 							<div class="article-left-box">
 								<div class="article-left-box-inner">
 									<div class="article-share">
-										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Check%20out%20{{$post->title }}%20on%20{{ url('blog/'.$post->slug) }}.%20powered%20by%20Apps:Lab%20KE%20on%20https://www.appslab.co.ke" class="facebook"></a>
+
+										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url('blog/'.$post->slug)) }}" class="facebook fb-xfbml-parse-ignore"></a>
 										<a target="_blank" href="https://twitter.com/home?status=Hey,check out {{$post->title }} on {{ url('blog/'.$post->slug) }} . Follow @AppsLab_KE" class="twitter"></a>
 										<a target="_blank" href="https://plus.google.com/share?url{{ ltrim(http_build_query([url('blog/'.$post->slug)]),'0') }}" class="google-plus"></a>
 									</div>
@@ -213,16 +207,10 @@
 									</div>
 
 								@endforelse
-
-
 								</div>
 							</div>
-							<!-- article comment area start -->
-
 						</div>
 					</article>
-					
-
 				</div>
 				<div class="content-sidebar">
 					<div class="sidebar_inner">

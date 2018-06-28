@@ -300,7 +300,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="{{$link}}" target="_blank">{{env('APP_NAME')}}</a> </td>
+                                      <td> <a href="https://geekstalkthursday.co.ke" target="_blank">{{env('APP_NAME')}}</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>

@@ -7,33 +7,39 @@
             </div>
             <!--sidebar menu toggler end -->
 
+
             <!--logo start -->
             <div class="logo-box">
                 <h1>
-                    <a href="{{url('/')}}" class="logo"></a>
+                    <a href="{{url('/')}}" style="text-decoration: none" class="logo">
+                        <img style="width: 95px; height: auto" src="{{ asset('img/logo.png') }}" alt="">
+                    </a>
                 </h1>
             </div>
             <!--logo end -->
+            <div class="header-menu">
+                <ul class="header-navigation" data-show-menu-on-mobile>
+                    <li><a href="{{ url('/') }}">
+                            <h3>GeeksTalkThursday</h3>
+                        </a></li>
+                    <li>
+                        <a href="{{ url('/') }}#" class="material-button submenu-toggle"><h3>Tutorials</h3></a>
+                        <div class="header-submenu">
+                            <ul>
+                                @foreach(\App\Category::all()->sortBy('category') as $item)
+                                    <li><a href="{{route('blog.category', str_slug($item->category))}}"><i class="fa fa-code"></i> {{ strtoupper($item->category) }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="header-menu">
 
                 <!-- header left menu start -->
                 <ul class="header-navigation" data-show-menu-on-mobile>
-                    {{-- <li>
-                        <a href="#" class="material-button ">HOME</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">POSTS</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">VIDEO</a>
-                    </li>
-                    <li>
-                        <a href="#" class="material-button ">EXTRA PAGES</a>
-                    </li> --}}
                 </ul>
-                <!-- header left menu end -->
-
             </div>
             <div class="header-right with-seperator">
 
@@ -60,17 +66,15 @@
                             <ul>
                                 <li class="{{ Request::is('saved-blog') ? "active" : "" }}"><a href="{{url('/saved-blog')}}">Saved Posts</a></li>
                                 <li>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
-                                    </div>
                                 </li>
                             </ul>
                         </div>

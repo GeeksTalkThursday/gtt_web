@@ -15,7 +15,8 @@
 					<div class="content-timeline">
 						<!--Timeline header area start -->
 						<div class="post-list-header">
-							<span class="post-list-title">{{$tagged->name}}</span>
+							<span class="post-list-title">{{ ucwords($tagged->name) }}</span>
+							<div class="footer-title-line"></div>
 						</div>
 						<!--Timeline header area end -->
 
@@ -23,39 +24,7 @@
 						<!--Timeline items start -->
 						<div class="timeline-items">
 
-						@foreach($posts as $post)
-	                            <div class="timeline-item">
-	                                <div class="timeline-left">
-	                                    <div class="timeline-left-wrapper">
-	                                        <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category" data-zebra-tooltip title="{{$post->category->category}}"><i class="material-icons">&#xE894;</i></a>
-	                                        <span class="timeline-date">
-	                                        @php
-	                                            $created = new \Carbon\Carbon($post->created_at);
-	                                            $now = \Carbon\Carbon::now();
-	                                        @endphp
-	                                    {{$created->diff($now)->days < 1 ? 'today': $created->diffForHumans($now)}}</span>
-	                                    </div>
-	                                </div>
-	                                <div class="timeline-right">
-	                                    <div class="timeline-post-image">
-	                                        <a href="{{route('blog.single',$post->slug)}}">
-	                                            <img src="{{ asset('images/posts/'.$post->thumbnail) }}" width="260">
-	                                        </a>
-	                                    </div>
-	                                    <div class="timeline-post-content">
-	                                        <a href="{{route('blog.category',$post->category->category)}}" class="timeline-category-name">{{$post->category->category}}</a>
-	                                        <a href="{{route('blog.single',$post->slug)}}">
-	                                            <h3 class="timeline-post-title">{{$post->title}}</h3>
-	                                        </a>
-	                                        <div class="timeline-post-info">
-	                                            <a href="{{route('blog.single',$post->slug)}}" class="author">{{$post->admin->name}}</a>
-	                                            <span class="dot"></span>
-	                                            <span class="comment">32 comments</span>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        @endforeach
+						@include('partials.tutorials')
 
 						</div>
 						<!--Timeline items end -->
@@ -112,11 +81,11 @@
 							</div>
 						</div>
 
-						{{-- <div class="seperator"></div>
+						<div class="seperator"></div>
 
 						<a href="list-timeline.html#" class="widget-ad-box">
 							<img src="/img/adbox300x250.png" width="300" height="250">
-						</a> --}}
+						</a>
 
 					</div>
 				</div>

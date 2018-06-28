@@ -3,7 +3,9 @@
 
             <!-- side menu logo start -->
             <div class="sidebar-logo">
-                <a href="{{url('/')}}"></a>
+                <a href="{{url('/')}}">
+                    <img style="width: 75px; height: auto" src="{{ asset('img/1logo.png') }}" alt="">
+                </a>
                 <div class="sidebar-toggle-button">
                     <i class="material-icons">&#xE317;</i>
                 </div>
@@ -19,23 +21,17 @@
 
             <!-- sidebar menu start -->
             <ul class="sidebar-menu">
-                <li class="{{ Request::is('/') ? "active" : "" }}">
-                    <a href="{{url('/')}}" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE88A;</i></span>
-                        <span class="menu-label">Home</span>
-                    </a>
-                </li>
 
                 <li class="{{ Request::is('posts') ? "active" : "" }}">
                     <a href="{{url('/posts')}}" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE0BF;</i></span>
-                        <span class="menu-label">Posts</span>
+                        <span class="menu-icon"><i class="fa fa-book"></i></span>
+                        <span class="menu-label">Browse</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('contact') ? "active" : "" }}">
                     <a href="{{url('/contact')}}" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE866;</i></span>
-                        <span class="menu-label">Contact</span>
+                        <span class="menu-icon"><i class="fa fa-phone"></i></span>
+                        <span class="menu-phone">Contact</span>
                     </a>
                 </li>
 
@@ -63,7 +59,7 @@
                 </li>
                 <li>
                     <a href="{{ route('social.oauth', 'google') }}" class="google-plus material-button">
-                        <span class="menu-label"><i class="fa fa-google"></i> Google </span>
+                        <span class="menu-label"><img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/></i> Google </span>
                     </a>
                 </li> 
             </ul>
