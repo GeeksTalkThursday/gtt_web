@@ -17,7 +17,7 @@
 
 			    			<a href="{{route('blog.category',$post->category->category)}}" class="post-category" title="{{ucwords($post->category->category)}}" rel="tag">{{ucwords($post->category->category)}}</a>
 			    			<h1 class="post-title bg-opacity">{{ucwords($post->title)}}</h1>
->>>>>>> 496694ffd56caeb2adf39a11b28c2d28b54969f6
+
 			    			<div class="post-meta">
 			    				<div class="post-meta-author-info">
 			    					<span class="post-meta-author-name">

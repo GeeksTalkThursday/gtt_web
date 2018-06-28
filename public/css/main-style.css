@@ -500,7 +500,8 @@ a{
  	color: #FFF;
  }
  .sidebar-menu > li a.google-plus{
- 	background-color: #DC4E41;
+ 	/*background-color: #DC4E41;*/
+	 background-color:  #66bb6a;
  	color: #FFF;
  }
  .sidebar-social-icons{

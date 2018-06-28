@@ -68,7 +68,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="pull-left">
-                            <span> Coded and Maintained with <i class="fa fa-heart red"></i> by <a style="color: cyan;" target="_blank" href="http://www.appslab.co.ke">Apps:Lab KE</a> |  (C) {{date('Y')}} All rights reserved </span>
+                            <span> Coded and Maintained <i class="fa fa-heart red"></i> by <a style="color: cyan;" target="_blank" href="http://www.appslab.co.ke">Apps:Lab KE</a> |  (C) {{date('Y')}} All rights reserved </span>
                         </div> 
                         <div class="bottom-menu pull-right"> 
                             <ul> 
