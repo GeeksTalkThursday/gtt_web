@@ -308,7 +308,7 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p>{{env('APP_NAME')}}</p>
+                        {{--<p>{{env('APP_NAME')}}</p>--}}
                         <p>Geeks Talk Thursday</p>
                       </td>
                     </tr>
