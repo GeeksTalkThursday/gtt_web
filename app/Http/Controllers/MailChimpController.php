@@ -19,7 +19,7 @@ class MailChimpController extends Controller
 
     public $mailchimp ;
 
-    public $listId = 'e2fa5225a6';
+    public $listId = '335f95ac0b';
 
 
     public function __construct(\Mailchimp $mailchimp)
