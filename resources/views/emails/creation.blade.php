@@ -283,6 +283,17 @@
 
             <!-- START CENTERED WHITE CONTAINER -->
             <span class="preheader">Welcome to {{env('APP_NAME')}}, keep it to code.</span>
+            <div class="footer">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block" style="background-color: #22A99D; ">
+                    <a href="{{url('/')}}" target="_blank" class="logo" >
+                        <img src="{{asset('/img/logo.png') }}" width="150" alt="GTT" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
             <table class="main">
 
               <!-- START MAIN CONTENT AREA -->
@@ -292,7 +303,9 @@
                     <tr>
                       <td>
                         <p>Hi {{$name}},</p>
-                        <p>Welcome to {{env('APP_NAME')}}, keep it to code.</p>
+                        <p>Welcome to {{env('APP_NAME')}}.</p>
+                        <p>{{env('APP_NAME')}} is a project by Apps:Lab for developers to Learn, Engage, Share knowledge and a lots of commits <br>
+                        <b>#LetTheCommitsSpeak </b></p>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -300,7 +313,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="https://geekstalkthursday.co.ke" target="_blank">{{env('APP_NAME')}}</a> </td>
+                                      <td> <a style="background-color#22A99D;" href="https://geekstalkthursday.co.ke" target="_blank">{{env('APP_NAME')}}</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -308,7 +321,7 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p>{{env('APP_NAME')}}</p>
+                        {{-- <p>{{env('APP_NAME')}}</p> --}}
                         <p>Geeks Talk Thursday</p>
                       </td>
                     </tr>
@@ -330,7 +343,7 @@
                 </tr>
                 <tr>
                   <td class="content-block powered-by">
-                    Powered by <a href="http://www.appslab.co.ke">Apps:Lab KE</a>.
+                    Coded and Maintained with ❤ by <a href="http://www.appslab.co.ke">Apps:Lab KE</a>.
                   </td>
                 </tr>
               </table>
