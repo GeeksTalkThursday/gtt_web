@@ -35,5 +35,4 @@
 
     {{-- <link href="{{asset('css/prism.css')}}" rel="stylesheet" /> --}}
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} crossorigin="anonymous">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
