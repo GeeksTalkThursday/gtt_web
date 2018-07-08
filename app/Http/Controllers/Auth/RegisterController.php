@@ -13,6 +13,7 @@ use Yuansir\Toastr\Facades\Toastr;
 use Illuminate\Mail\Mailer;
 use Mail;
 use Auth;
+use App\Events\UserRegister;
 
 class RegisterController extends Controller
 {
@@ -36,17 +37,15 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
-    public $subscribeEmail ;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(\App\Http\Controllers\MailChimpController $subscribeEmail)
+    public function __construct()
     {
         $this->middleware('guest');
-        $this->subscribeEmail = $subscribeEmail;
     }
 
     /**
@@ -81,30 +80,18 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
-
-        $name = Auth::user()->name;
-        $to_email = Auth::user()->email;
-        $link = url('/');
-
-            Mail::send('emails.creation', ['name' => $name,'link'=>$link], function ($message) use ($to_email)
-            {
-
-                $message->from(env('MAIL_ACCOUNT'), env('APP_NAME')); 
-
-                $message->to($to_email);
-
-                $message->subject(env('APP_NAME') .' '.'Account creation');
-
-            });
-
-        if ($request->subscribe != null and $request->subscribe == 'on') {
-            $this->subscribeEmail->subscribeOnRegister($to_email);
-
+        if (request()->subscribe != null and request()->subscribe == 'on') {
+            $subscribe = true;
         }
         else{
-            // session()->put('success',' Successfully registered');
-            Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
+            $subscribe = false;
         }
+
+        //event
+        event(new UserRegister($user, $subscribe));
+
+            // session()->put('success',' Successfully registered');
+        Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
         return redirect('/');
     }

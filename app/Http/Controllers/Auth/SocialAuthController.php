@@ -13,6 +13,7 @@ use Yuansir\Toastr\Facades\Toastr;
 
 use Illuminate\Mail\Mailer;
 use Mail;
+use App\Events\UserRegister;
 
 class SocialAuthController extends Controller
 {
@@ -132,22 +133,13 @@ class SocialAuthController extends Controller
             ]);
         }
 
-            $name = $providerUser->getName();
-            $to_email = $providerUser->getEmail();
-            $link = url('/');
-
-            Mail::send('emails.creation', ['name' => $name,'link'=>$link], function ($message) use ($to_email)
-            {
-
-                $message->from(env('MAIL_ACCOUNT'), env('APP_NAME')); 
-
-                $message->to($to_email);
-
-                $message->subject(env('APP_NAME') .' '.'Account creation');
-
-            });
         // login the user
         Auth::login($user, true);
+
+        $subscribe = true;
+
+        //add event ya ku subscribe
+        event(new UserRegister($user, $subscribe));
 
         Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
