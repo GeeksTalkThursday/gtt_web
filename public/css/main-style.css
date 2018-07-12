@@ -2872,9 +2872,14 @@ textarea.frm-input{
 pre{
 	overflow: auto;
 }
+.article-inner p{
+	font-family: inherit!important;
+	padding: inherit!important;
+}
+
 
 /* desert scheme ported from vim to google prettify */
-pre.prettyprint { display: block; background-color: #333; border-radius: 0px!important;}
+pre.prettyprint { display: block; background-color: #2A343B; border-radius: 0px!important;}
 pre .nocode { background-color: none; color: #000 }
 pre .str { color: #ffa0a0 } /* string  - pink */
 pre .kwd { color: #f0e68c; font-weight: bold }
@@ -2909,9 +2914,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 }
 
 code {
-/*font-family: Courier, 'New Courier', monospace;*/
-font-size: 12px;
-
+	font-size: 12px;
 }
 
 .footer{

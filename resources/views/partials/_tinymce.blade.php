@@ -5,7 +5,7 @@
 				  theme:"modern",
                   plugins:'link emoticons codesample image',
                   toolbar: 'codesample | bold italic sizeselect fontselect fontsizeselect | ' +
-                  'hr alignleft aligncenter alignright alignjustify textcolor | bullist numlist outdent indent | ' +
+                  'hr alignleft aligncenter alignright alignjustify textcolor | bullist numlist outdent indent sub sup | ' +
                   'link image | insertfile undo redo | forecolor backcolor emoticons ',
                   fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                   menubar: false
