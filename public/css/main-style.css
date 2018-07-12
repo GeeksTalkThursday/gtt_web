@@ -2876,6 +2876,18 @@ pre{
 	font-family: inherit!important;
 	padding: inherit!important;
 }
+.article-inner a span{
+	text-decoration: none;
+ 	background-color: #069!important;
+	color: #FFF!important;
+	padding: 4px 10px!important;
+	border:none!important;
+	cursor: pointer!important;
+	background: #03A9F4!important;
+	outline: none!important;
+	border-radius: 2px!important;
+	text-decoration: none!important;
+ }
 
 
 /* desert scheme ported from vim to google prettify */

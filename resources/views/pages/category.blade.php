@@ -14,7 +14,7 @@
 						<span><img src="{{ asset('img/meeting.png') }}" width="80" height="80"></span>
 					</div>
 					<div class="post-title">
-						<h4><span style="font-weight: 800; font-size: larger"> {{ strtoupper($category->category) }} | {{ count($data['categories']) }} Posts</span></h4>
+						<h4><span style="font-weight: 800; font-size: larger"> {{ strtoupper($category->category) }} | {{ $posts->count() }} Posts</span></h4>
 						<span class="post-date">Engage and Learn</span>
 					</div>
 				</article>
