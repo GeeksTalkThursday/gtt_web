@@ -37,6 +37,9 @@ class PagesController extends Controller
     public function single($slug)
     {
         $post = Post::where('slug', $slug)->first();
+        if (!$post) {
+            return redirect('/');
+        }
         $slide = Post::orderBy('created_at', 'desc')->get()->take(4);
         $pop = Post::inRandomOrder()->get()->take(3);
         $porpular = Post::inRandomOrder()->get()->take(5);
@@ -52,6 +55,9 @@ class PagesController extends Controller
     public function category($category)
     {
     	$category = Category::where('category',$category)->first();
+        if (!$category) {
+            return redirect('/');
+        }
     	$post = Post::where('category_id',$category->id)->paginate(10);
     	$data= [
     	    'count' =>count(Post::where('category_id',$category->id)->get()),
@@ -68,6 +74,10 @@ class PagesController extends Controller
     public function tag($slug)
     {
         $current = Tag::where('name', $slug)->first();
+
+        if (!$current) {
+            return redirect('/');
+        }
 
         $porpular = Post::inRandomOrder()->get()->take(4);
 

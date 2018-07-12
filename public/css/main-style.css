@@ -2932,8 +2932,9 @@ color: #fff;
 .tagged{
 	background-color: #03A9F4;
 	color: #fff;
-	margin-right: 5px;
-	margin: 5px;
+	/*margin-right: 5px;
+	margin: 5px;*/
+	/*padding: 2px!important;*/
 }
 
 

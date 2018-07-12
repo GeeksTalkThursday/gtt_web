@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         \App\Admin::create(
             [
                 'name' => 'ADMIN',
-                'email' => 'admin@mail.com',
-                'password' => bcrypt('admin'),
+                'email' => 'admin@geekstalkthursday.co.ke',
+                'password' => bcrypt('Heart0ftec#'),
             ]
         );
     }
