@@ -31,7 +31,7 @@
                                 $len = count($tags_all);
                             @endphp
                             @foreach($tags_all as $key => $tag)
-                                <a href="{{route('blog.tag',$tag->name)}}"><span class="tagged"> <button class="frm-button material-button">{{strtoupper($tag->name)}}</button> </span></a>
+                                <a href="{{route('blog.tag',$tag->name)}}"><span class="tagged" > <button class="frm-button material-button" style="margin-top: 3px;">{{strtoupper($tag->name)}}</button> </span></a>
                                 <span style="color: #E30025;">{{$key == $len - 1 ?'   ':' | '}}</span>
                             @endforeach
                         </p>
