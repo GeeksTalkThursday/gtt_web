@@ -54,7 +54,11 @@
 
 										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url('blog/'.$post->slug)) }}" class="facebook fb-xfbml-parse-ignore"></a>
 										<a target="_blank" href="https://twitter.com/home?status=Hey,check out {{$post->title }} on {{ url('blog/'.$post->slug) }} . Follow @AppsLab_KE" class="twitter"></a>
-										<a target="_blank" href="https://plus.google.com/share?url{{ ltrim(http_build_query([url('blog/'.$post->slug)]),'0') }}" class="google-plus"></a>
+										<a target="_blank" href="https://plus.google.com/share?url{{ ltrim(http_build_query([url('blog/'.$post->slug)]),'0') }}" class="google-plus">
+											
+										</a>
+										<a target="_blank" href="whatsapp://send?text=Check out {{$post->title }} {{ url('blog/'.$post->slug) }}"" target="_blank" class="whatsapp-link visible-xs" ><i class="fa whatsapp fa-whatsapp" ></i>
+										</a> 
 									</div>
 								@auth
 									<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >

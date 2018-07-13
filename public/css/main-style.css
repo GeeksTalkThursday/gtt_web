@@ -3313,3 +3313,17 @@ padding: 10px;
   top: calc(50% - 10px);
   left: calc(50% - 20px);
 }*/
+.whatsapp-link{
+	background-size: 24px;
+	background-color:  #009D87;
+	align-items: center;
+}
+i.whatsapp{
+	font-size: 20px;
+	padding: 15px;
+	color: #fff; 
+}
+
+.whatsapp-link {
+	opacity: 0.7;
+}
