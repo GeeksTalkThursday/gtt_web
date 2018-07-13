@@ -2869,10 +2869,26 @@ textarea.frm-input{
 }
 
 /*end of me*/
-pre{
-	overflow: scroll;
-	width: auto;
+pre.prettyprint code{
+	overflow-x: scroll;
+        overflow-y: hidden;
+        display: block;
+        /*line-height: 1.6em;*/
+        /*font-size: 11px;*/
+        white-space: pre; 
+        word-wrap: normal;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#22A99E!important;
+}
+
 .article-inner p{
 	font-family: inherit!important;
 	padding: inherit!important;
