@@ -131,15 +131,15 @@ class SocialAuthController extends Controller
                 // user can use reset password to create a password
                 'password' => ''
             ]);
+
+            $subscribe = true;
+
+            //add event ya ku subscribe
+            event(new UserRegister($user, $subscribe));
         }
 
         // login the user
         Auth::login($user, true);
-
-        $subscribe = true;
-
-        //add event ya ku subscribe
-        event(new UserRegister($user, $subscribe));
 
         Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
