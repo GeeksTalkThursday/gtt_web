@@ -35,7 +35,7 @@ self.onactivate = function(event) {
 self.onfetch = function(event) {
   var request = event.request;
   event.respondWith(
-    fetch(event.request).catch(function() {
+    fetch(event.request).catch(function(response) {
       if (response) {
         return caches.match(event.request);
       }
