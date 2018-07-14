@@ -62,14 +62,14 @@
 									</div>
 								@auth
 									<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >
-										<span id="button-fav" class="{{$book?'add-to-favorite1':'add-to-favorite'}}" data-zebra-tooltip title="Add to favorite">
+										<span id="button-fav" class="{{$book?'add-to-favorite1':'add-to-favorite'}}" data-zebra-tooltip title="Add to Bookmark">
 										<i class="material-icons">&#xE866;</i>
 										</span>
 									</a>
 								@endauth
 								@guest
 								<a href="{{url('/favorite',$post->id)}}" id="favorite" data-method='get' >
-										<span id="button-fav" class="add-to-favorite" data-zebra-tooltip title="Add to favorite">
+										<span id="button-fav" class="add-to-favorite" data-zebra-tooltip title="Add to Bookmark">
 										<i class="material-icons">&#xE866;</i>
 										</span>
 									</a>
@@ -181,7 +181,7 @@
 									<!-- comment item start -->
 									<div class="comment-item">
 										<div class="comment-avatar">
-											<span class="comment-img"><img src={{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email)))  }} width="50" height="50"></span>
+											<span class="comment-img"><img src={{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email)))."?d=".urlencode('https://geekstalkthursday.co.ke/img/app_logo.png')  }} width="50" height="50"></span>
 										</div>
 										<div class="comment-content">
 											<div class="comment-header">
