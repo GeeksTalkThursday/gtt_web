@@ -1,7 +1,9 @@
-var CACHE_NAME = 'sw-ex-GTT';
+var CACHE_NAME = 'sw-GTT-1';
 var CACHE_VERSION = 1;
 
 var filesToCache = [
+  '/',
+  'index.php',
   'js/app.js',
   'sw.js',
   'img/logo1.png',
