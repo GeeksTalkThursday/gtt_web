@@ -7,26 +7,15 @@
         </style>
     @endif
         <div class="m-modal-content small">
-            <div class="m-modal-header">
-                <h3 class="m-modal-title">Register</h3>
+            <div class="m-modal-header text-center">
+                <h3 class="m-modal-title">Register with</h3>
                 @if(!Request::is('register'))
                     <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
                 @endif
             </div>
             <div class="m-modal-body">
                 {{-- hii iko kwa login LREDy --}}
-                <div class="m-modal-social-logins">
-                    <br>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'github') }}" class="frm-button facebook material-button full" type="button"><i class="fa fa-github"></i> GitHub</a>
-                    </div>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'bitbucket') }}" class="frm-button twitter material-button full" type="button"> <i class="fa fa-bitbucket"></i>  Bitbucket</a>
-                    </div>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button"><img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/> Google</a>
-                    </div>
-                </div>
+                @include('partials.layouts._social_auths')
 
                 <div class="m-modal-seperator"><span>OR</span></div>
 

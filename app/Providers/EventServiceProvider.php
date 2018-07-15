@@ -17,6 +17,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\SendWelcomeEmail',
             'App\Listeners\SubscribeUser',
         ],
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            // add your listeners (aka providers) here
+            'SocialiteProviders\\GitLab\\GitLabExtendSocialite@handle',
+        ],
     ];
 
     /**

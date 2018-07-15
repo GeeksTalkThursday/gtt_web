@@ -14,6 +14,7 @@ use Yuansir\Toastr\Facades\Toastr;
 use Illuminate\Mail\Mailer;
 use Mail;
 use App\Events\UserRegister;
+// use Yuansir\Toastr\Facades\Toastr;
 
 class SocialAuthController extends Controller
 {
@@ -29,10 +30,11 @@ class SocialAuthController extends Controller
      */
     protected $providers = [
         'github',
-        'facebook',
+        // 'facebook',
         'google',
-        'twitter',
-        'bitbucket'
+        // 'twitter',
+        'bitbucket',
+        'gitlab'
     ];
 
      /**
@@ -101,12 +103,16 @@ class SocialAuthController extends Controller
      */
     protected function sendFailedResponse($msg = null)
     {
-        return redirect()->route('login')
-            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
+        dd($msg);
+        Toastr::success(printf($msg) ?: 'Unable to login, try with another provider to login', $options = ["progressBar"=>true]);
+        return back();
+        // return redirect()->route('login')
+            // ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
     }
 
     protected function loginOrCreateAccount($providerUser, $driver)
     {
+        // dd($providerUser);
         // check for already has account
         $user = User::where('email', $providerUser->getEmail())->first();
 

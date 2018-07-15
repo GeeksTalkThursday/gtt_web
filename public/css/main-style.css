@@ -499,6 +499,10 @@ a{
  	background-color: #292C32;
  	color: #FFF;
  }
+ .sidebar-menu > li a.gitlab{
+ 	background-color: #3A0064;
+ 	color: #FFF;
+ }
  .sidebar-menu > li a.google-plus{
  	background-color: #DC4E41;
  	color: #FFF;
@@ -2652,6 +2656,24 @@ textarea.frm-input{
 }
 .sidebar-spacer{
 	height: 92px;
+}
+.m-modal-social-logins{
+	border: 1px solid #969696;
+	border-radius: 3px;
+}
+.m-modal-social-logins a{
+	text-decoration: none;
+	font-size: 40px;
+	padding: 10px 0px;
+}
+.m-modal-social-logins .github{
+	color: #292C32!important;
+}
+.m-modal-social-logins .bitbucket{
+	color: #4300AA;
+}
+.m-modal-social-logins .gitlab{
+	color: #4300AA;
 }
 .sidebar-button-group{
 	border: 1px solid #eee;

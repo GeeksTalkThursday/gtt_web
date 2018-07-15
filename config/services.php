@@ -59,5 +59,10 @@ return [
         'client_secret' => env('BITBUCKET_SECRET'),
         'redirect'      => env('APP_URL') . '/oauth/bitbucket/callback',
     ],
+    'gitlab' => [
+        'client_id' => env('GITLAB_KEY'),
+        'client_secret' => env('GITLAB_SECRET'),
+        'redirect' => env('APP_URL') . '/oauth/gitlab/callback',
+    ],
 
 ];

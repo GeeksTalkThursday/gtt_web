@@ -27,7 +27,8 @@
                         <div class="header-submenu">
                             <ul>
                                 @foreach(\App\Category::all()->sortBy('category') as $item)
-                                    <li><a href="{{route('blog.category', $item->category)}}"><i class="fa fa-code"></i> {{ strtoupper($item->category) }}</a></li>
+                                    <li class="hidden-xs hidden-sm"><a href="{{route('blog.category', $item->category)}}"><i class="fa fa-code"></i> {{ strtoupper($item->category) }}</a></li>
+                                    <li class="hidden-md hidden-lg"><a href="{{route('blog.category', $item->category)}}">{{-- <i class="fa fa-code"></i> --}} {{ strtoupper($item->category) }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
