@@ -223,6 +223,7 @@
     <!-- Bootstrap -->
     <script src="/admins/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
+    {!! Toastr::render() !!}
     {{-- <script src="/admins/vendors/fastclick/lib/fastclick.js"></script> --}}
     <!-- NProgress -->
     <script src="/admins/vendors/nprogress/nprogress.js"></script>
@@ -573,6 +574,5 @@ $('#fileImage-three').on( 'change', function(){
 
  @yield('scripts')
 
-    {!! Toastr::render() !!}
   </body>
 </html>
