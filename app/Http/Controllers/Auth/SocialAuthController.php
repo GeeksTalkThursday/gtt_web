@@ -104,7 +104,7 @@ class SocialAuthController extends Controller
     protected function sendFailedResponse($msg = null)
     {
         // dd($msg);
-        Toastr::success(printf($msg) ?: 'Unable to login, try with another provider to login', $options = ["progressBar"=>true]);
+        Toastr::success('Unable to login, try with another provider to login', $options = ["progressBar"=>true]);
         return back();
         // return redirect()->route('login')
             // ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
