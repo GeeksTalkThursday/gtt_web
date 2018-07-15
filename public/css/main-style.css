@@ -2548,12 +2548,12 @@ blockquote span{
 .m-modal-social-logins{
 	overflow: hidden;
 }
-.m-modal-social-logins > .columns{
+/*.m-modal-social-logins > .columns{
 	padding-right: 10px;
 }
 .m-modal-social-logins > .columns:last-child{
-	padding-right: 0;
-}
+	padding-right: 0;*/
+/*}*/
 /*end of part 23---------------------------------------------------*/
 
 
@@ -2664,8 +2664,11 @@ textarea.frm-input{
 .m-modal-social-logins a{
 	text-decoration: none;
 	font-size: 40px;
-	padding: 10px 0px;
+	/*padding: 15px;*/
 }
+.m-modal-social-logins a.github{
+	margin-right: 37px!important;
+	}
 .m-modal-social-logins .github{
 	color: #292C32!important;
 }

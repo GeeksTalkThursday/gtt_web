@@ -11,18 +11,18 @@
                 </div> --}}
 
                   <div class="m-modal-social-logins">
-                    <div class="col-xs-offset-2 col-xs-10">
-                        <div class="columns column-1">
+                    <div class="col-xs-offset-1 col-xs-10">
+                        <div class="col-xs-3">
                             <a href="{{ route('social.oauth', 'github') }}" class=" github " ><i class="fa fa-github"></i></a>
                         </div>
-                        <div class="columns column-1">
+                        <div class="col-xs-3">
                             <a href="{{ route('social.oauth', 'bitbucket') }}" class=" bitbucket " ><i class="fa fa-bitbucket"></i></a>
                         </div> 
-                        <div class="columns column-1">
-                            <a href="{{ route('social.oauth', 'gitlab') }}" class="gitlab ">{{-- <i class="fa fa-gitlab"> --}}<img width="40px" style="padding: 0px;" src="{{asset('/img/gitlab.png')}}"></i></a>
+                        <div class="col-xs-3">
+                            <a href="{{ route('social.oauth', 'gitlab') }}" class="gitlab ">{{-- <i class="fa fa-gitlab"> --}}<img width="40px" src="{{asset('/img/gitlab.png')}}"></i></a>
                         </div>
-                        <div class="columns column-1">
-                            <a href="{{ route('social.oauth', 'google') }}" class=" google " ><img width="60px" style="padding: 10px;" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/> </a>
+                        <div class="col-xs-3">
+                            <a href="{{ route('social.oauth', 'google') }}" class=" google " ><img width="40px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/> </a>
                         </div>
                     </div>
                 </div>
