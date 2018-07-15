@@ -142,12 +142,12 @@ class SocialAuthController extends Controller
 
             //add event ya ku subscribe
             event(new UserRegister($user, $subscribe));
+
+            Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
         }
 
         // login the user
         Auth::login($user, true);
-
-        Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
         return $this->sendSuccessResponse();
     }
