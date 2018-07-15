@@ -70,7 +70,7 @@
                                                 <div class="box-right">
                                                     <h3 class="p-title">{{$porpular->title}}</h3>
                                                     <div class="p-icons">
-                                                        213 likes . 124 comments
+                                                        {{-- 213 likes . --}} {{count($porpular->comments)}} comments
                                                     </div>
                                                 </div>
                                             </div>

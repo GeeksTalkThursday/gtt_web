@@ -78,9 +78,10 @@ class PostsController extends Controller
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags);
-        }else{
-            $post->tags()->sync(array());
         }
+        // else{
+        //     $post->tags()->sync(array());
+        // }
 
         Toastr::success('New Post successfully saved', $title = 'Added Post', $options = ["progressBar"=>true]);
 
@@ -161,9 +162,10 @@ class PostsController extends Controller
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags);
-        }else{
-            $post->tags()->sync(array());
         }
+        // else{
+        //     $post->tags()->sync(array());
+        // }
 
 
         Toastr::success('New Post successfully saved', $title = 'Added Post', $options = ["progressBar"=>true]);

@@ -75,46 +75,29 @@
 
                 </div>
                 <div class="content-sidebar">
-                    <div class="sidebar_inner">
+                    <div class="sidebar_inner sidebar_inner1">
 
                         <div class="widget-item">
                             <div class="w-header">
-                                <div class="w-title">Glance</div>
-                                <div class="w-seperator"></div>
-                            </div>
-                            <div class="w-carousel-post">
-                                <div class="owl-carousel" id="widgetCarousel">
-                                @foreach($slides as $slide)
-                                    <div class="item">
-                                        <a href="{{route('blog.single',$slide->slug)}}">
-                                            <img src="{{ asset('images/posts/'.$slide->thumbnail) }}" width="300">
-                                            <span class="w-post-title">{{ucwords($slide->title)}}</span>
-                                        </a>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                            <div class="footer-title-line"></div>
-                        {{--<div class="seperator"></div>--}}
-
-                        <div class="widget-item">
-                            <div class="w-header">
-                                <div class="w-title">Latest Posts</div>
+                                <div class="w-title">Editor's Picks</div>
                                 <div class="w-seperator"></div>
                             </div>
                             <div class="w-boxed-post">
                                 <ul>
+                                    @php
+                                    $i = 1;
+                                    @endphp
                                 @foreach($porpulars as $porpular)
                                     <li>
                                         <a href="{{route('blog.single',$porpular->slug)}}" style="background-image: url({{ asset('images/posts/'.$porpular->thumbnail) }});">
                                             <div class="box-wrapper">
                                                 <div class="box-left">
-                                                    <span>{{$loop->iteration}}</span>
+                                                    <span>{{$i++}}</span>
                                                 </div>
                                                 <div class="box-right">
-                                                    <h3 class="p-title">{{ucwords($porpular->title)}}</h3>
+                                                    <h3 class="p-title">{{$porpular->title}}</h3>
                                                     <div class="p-icons">
-                                                        {{-- 213 likes . 124 comments --}}
+                                                        {{-- 213 likes . --}} {{count($porpular->comments)}} comments
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,15 +108,34 @@
                             </div>
                         </div>
 
+                        <div class="widget-item">
+                            <div class="w-header">
+                                <div class="w-title">Carousel Posts</div>
+                                <div class="w-seperator"></div>
+                            </div>
+                            <div class="w-carousel-post">
+                                <div class="owl-carousel" id="widgetCarousel">
+                                @foreach($slides as $slide)
+                                    <div class="item">
+                                        <a href="{{route('blog.single',$slide->slug)}}">
+                                            <img src="{{ asset('images/posts/'.$slide->thumbnail) }}" width="300">
+                                            <span class="w-post-title">{{$slide->title}}</span>
+                                        </a>
+                                    </div>
+                                @endforeach
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="seperator"></div>
-                        
-                        <a href="index4.html#" class="widget-ad-box">
+
+                        <a href="#" class="widget-ad-box">
                             <img src="/img/adbox300x250.png" width="300" height="250">
                         </a>
 
+                    
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 

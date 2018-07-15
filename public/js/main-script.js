@@ -87,8 +87,10 @@ var setStickySidebar = function(){
 	if (window.outerWidth > 960)
 	{
 		var sidebar = $('.sidebar_inner');
+		var sidebar1 = $('.sidebar_inner1');
 		var sidebarHeight = sidebar.outerHeight();
 		var windowHeight = $(window).height()-360;
+		var windowHeight1 = $(window).height()-2000;
 		var wrapperTopPos = $('.main-content').position().top;
 		var scrollTop = $(this).scrollTop();
 
@@ -105,6 +107,22 @@ var setStickySidebar = function(){
 				sidebar.css({'position':'fixed', 'top':-(sidebarHeight+30-windowHeight)});
 			else
 				sidebar.css({'position':'absolute', 'top':0});
+
+		}
+		//added for index.php
+		if ((sidebarHeight+30) < windowHeight1)
+		{
+			if ((scrollTop+30) > wrapperTopPos)
+				sidebar1.css({'position':'fixed', 'top':30});
+			else
+				sidebar1.css({'position':'absolute', 'top':0});
+		}
+		else
+		{
+			if (scrollTop > (wrapperTopPos+30+sidebarHeight-windowHeight1))
+				sidebar1.css({'position':'fixed', 'top':-(sidebarHeight+30-windowHeight1)});
+			else
+				sidebar1.css({'position':'absolute', 'top':0});
 
 		}
 

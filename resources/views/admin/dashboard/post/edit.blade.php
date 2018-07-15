@@ -61,6 +61,18 @@
                       </div>
 
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Add Tags</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                           <select id="tags" name="tags[]" class="form-control" multiple="multiple" >
+                            @foreach($tags as $tag)
+                              <option value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
+                            
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
                           <label>Details</label>
                           <textarea name="details" class="form-control" value="{{ old('details') }}">{{ $post->body }}</textarea>
                       </div>

@@ -19,7 +19,7 @@ class PagesController extends Controller
 
 //        $category = Category::all();
         $slide = Post::with(['comments'])->orderBy('created_at', 'desc')->get()->take(4);
-        $porpular = Post::with(['comments'])->inRandomOrder()->get()->take(4);
+        $porpular = Post::with(['comments'])->inRandomOrder()->get()->take(5);
         $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
 
         return view('pages.index')
