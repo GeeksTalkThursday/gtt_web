@@ -72,8 +72,10 @@
                         <div class="bottom-menu pull-right"> 
                             <ul> 
                                 <li><a class="wow fadeInUp animated" href="/" data-wow-delay="0.2s">Home</a></li>
+                            @guest
                                 <li><a class="wow fadeInUp animated" href="#" data-modal="registerModal" data-wow-delay="0.3s">Register</a></li>
                                 <li><a class="wow fadeInUp animated" href="#" data-modal="loginModal" data-wow-delay="0.4s">Login</a></li>
+                            @endguest
                                 <li><a class="wow fadeInUp animated" href="/contact" data-wow-delay="0.6s">Contact</a></li>
                             </ul> 
                         </div>
