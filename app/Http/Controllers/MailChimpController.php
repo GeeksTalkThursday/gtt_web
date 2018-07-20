@@ -19,7 +19,7 @@ class MailChimpController extends Controller
 
     public $mailchimp ;
 
-    public $listId = 'e2fa5225a6';
+    public $listId = '335f95ac0b';
 
 
     public function __construct(\Mailchimp $mailchimp)
@@ -109,18 +109,18 @@ class MailChimpController extends Controller
 
             );
         // session()->put('success','Registered, Notifications Subscribed successfully, check your email');
-            Toastr::success('Registered, Notifications Subscribed successfully, check your email', $title = 'Registration', $options = ["progressBar"=>true]);
+            // Toastr::success('Registered, Notifications Subscribed successfully, check your email', $title = 'Registration', $options = ["progressBar"=>true]);
 
         } catch (\Mailchimp_List_AlreadySubscribed $e) {
 
             // session()->put('warning','Email already subscribed');
-            Toastr::warning('Email already subscribed', $title = 'Registration', $options = ["progressBar"=>true]);
+            // Toastr::warning('Email already subscribed', $title = 'Registration', $options = ["progressBar"=>true]);
 
 
         } catch (\Mailchimp_Error $e) {
 
             // session()->put('error','Error from Mailchimp');
-            Toastr::error('Error from Mailchimp', $title = 'Mailchimp error', $options = ["progressBar"=>true]);
+            // Toastr::error('Error from Mailchimp', $title = 'Mailchimp error', $options = ["progressBar"=>true]);
 
         }
 
