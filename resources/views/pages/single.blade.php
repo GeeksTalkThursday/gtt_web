@@ -22,10 +22,15 @@
 			    						<a href="#" title="{{ucwords($post->admin->admin)}}" rel="author">{{ucwords($post->admin->admin)}}</a>
 			    					</span>
 			    					<span class="middot">·</span>
+
 			    					<span class="post-meta-date">
+			    						<abbr class="published updated bg-opacity" ><i class="fa fa-user"></i> {{ucwords($post->admin->name)}}
+	                            		</abbr>
+	                            		<span class="post-date item-spacing">|</span>
 			    						<abbr class="published updated bg-opacity"  title="{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}">
 			    							{{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}
 	                                	</abbr>
+
 			    					</span>
 			    				</div>
 			    			</div>
