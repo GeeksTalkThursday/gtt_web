@@ -64,11 +64,9 @@
 
                         <!--Data load more button start  -->
                         <div class="load-more">
-                            <div class="pull-right">
                                 <div class=" pagination">
                                     {!! $posts->links(); !!}
                                 </div>
-                            </div>
                         </div>
                         <!--Data load more button start  -->
                     </div>

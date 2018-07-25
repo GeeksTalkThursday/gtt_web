@@ -20,7 +20,7 @@ class PagesController extends Controller
 //        $category = Category::all();
         $slide = Post::with(['comments'])->orderBy('created_at', 'desc')->get()->take(4);
         $porpular = Post::with(['comments'])->inRandomOrder()->get()->take(5);
-        $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(8);
 
         return view('pages.index')
             ->withCategories([])
@@ -58,7 +58,7 @@ class PagesController extends Controller
         if (!$category) {
             return redirect('/');
         }
-    	$post = Post::where('category_id',$category->id)->paginate(10);
+    	$post = Post::where('category_id',$category->id)->paginate(8);
     	$data= [
     	    'count' =>count(Post::where('category_id',$category->id)->get()),
             'categories'=>Category::all(),
@@ -85,7 +85,7 @@ class PagesController extends Controller
             $query->where('name', $slug);
         })
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(8);
         if ($post->count() == 0) {
             return redirect()->back();
         }
@@ -103,7 +103,7 @@ class PagesController extends Controller
             ->orWhereHas('Category', function ($q) use ($key) {
                 $q->where('category', 'like', '%' . $key . '%');
             })
-            ->paginate(10);
+            ->paginate(8);
         if (!count($post)) {
 
             Toastr::warning('Search Results Returned nothing', $title = 'No Search Result', $options = ["progressBar" => true]);

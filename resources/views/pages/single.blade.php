@@ -182,7 +182,7 @@
 								</div>
 								<div class="all-comments">
 
-								@forelse($post->comments()->paginate(6) as $comment)
+								@forelse($post->comments()->paginate(8) as $comment)
 									<!-- comment item start -->
 									<div class="comment-item">
 										<div class="comment-avatar">
@@ -214,6 +214,12 @@
 									</div>
 
 								@endforelse
+
+								<div class="load-more">
+		                                <div class=" pagination">
+		                                    {!! $post->comments()->paginate(8)->links(); !!}
+		                                </div>
+		                        </div>
 								</div>
 							</div>
 						</div>
