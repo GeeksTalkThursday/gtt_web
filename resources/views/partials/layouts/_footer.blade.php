@@ -12,7 +12,7 @@
                                 <ul>
                                     <li><a target="_blank" class="wow fadeInUp animated" href="https://twitter.com/AppsLab_KE"><i class="fa fa-twitter"></i></a></li>
                                     <li><a target="_blank" class="wow fadeInUp animated" href="https://github.com/GeeksTalk" data-wow-delay="0.4s"><i class="fa fa-github"></i></a></li>
-                                    <li><a target="_blank" class="wow fadeInUp animated" href="#" data-wow-delay="0.6s"><i class="fa fa-slack"></i></a></li>
+                                    <li><a target="_blank" class="wow fadeInUp animated" href="https://join.slack.com/t/geekstalkthursday/shared_invite/enQtNDA1ODgxNTI0MTk5LWJmODg1MDczODVjNDQ0Y2JiM2I1N2RhY2QwMjFmN2E4MmIwYTI0MTFmN2ExMDczMjFjYWIyNGNkOWJmYWNjYmE" data-wow-delay="0.6s"><i class="fa fa-slack"></i></a></li>
                                     <li><a target="_blank" class="wow fadeInUp animated" href="#" data-wow-delay="0.6s"><i class="fa fa-medium"></i></a></li>
                                 </ul>
                             </div>
