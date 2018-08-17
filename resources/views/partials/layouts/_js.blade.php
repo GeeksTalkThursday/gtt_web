@@ -111,3 +111,4 @@
         });
     </script>
 
+@yield('js')

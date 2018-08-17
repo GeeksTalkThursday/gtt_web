@@ -180,7 +180,7 @@
 				
 									</form>
 								</div>
-								<div class="all-comments">
+								<div class="all-comments infinite-scroll">
 
 								@forelse($post->comments()->paginate(8) as $comment)
 									<!-- comment item start -->
@@ -215,11 +215,11 @@
 
 								@endforelse
 
-								<div class="load-more">
-		                                <div class=" pagination">
+								{{--<div class="load-more">--}}
+		                                {{--<div class=" pagination" style="margin: 0px!important;">--}}
 		                                    {!! $post->comments()->paginate(8)->links(); !!}
-		                                </div>
-		                        </div>
+		                                {{--</div>--}}
+		                        {{--</div>--}}
 								</div>
 							</div>
 						</div>
@@ -291,3 +291,21 @@
 		</section>
 
 @stop
+{{--@section('js')--}}
+	{{--<script src="https://unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>--}}
+	{{--<script type="text/javascript">--}}
+        {{--$('ul.pagination').hide();--}}
+        {{--$(function() {--}}
+            {{--$('.infinite-scroll').jscroll({--}}
+                {{--autoTrigger: true,--}}
+                {{--loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',--}}
+                {{--padding: 0,--}}
+                {{--nextSelector: '.pagination li.active + li a',--}}
+                {{--contentSelector: 'div.infinite-scroll',--}}
+                {{--callback: function() {--}}
+                    {{--$('ul.pagination').remove();--}}
+                {{--}--}}
+            {{--});--}}
+        {{--});--}}
+	{{--</script>--}}
+{{--@endsection--}}
