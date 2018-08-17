@@ -58,7 +58,7 @@ class PagesController extends Controller
         if (!$category) {
             return redirect('/');
         }
-    	$post = Post::where('category_id',$category->id)->paginate(8);
+    	$post = Post::where('category_id',$category->id)->orderBy('created_at','desc')->paginate(8);
     	$data= [
     	    'count' =>count(Post::where('category_id',$category->id)->get()),
             'categories'=>Category::all(),
