@@ -13,6 +13,8 @@ use Yuansir\Toastr\Facades\Toastr;
 
 use Illuminate\Mail\Mailer;
 use Mail;
+use App\Events\UserRegister;
+// use Yuansir\Toastr\Facades\Toastr;
 
 class SocialAuthController extends Controller
 {
@@ -28,10 +30,11 @@ class SocialAuthController extends Controller
      */
     protected $providers = [
         'github',
-        'facebook',
+        // 'facebook',
         'google',
-        'twitter',
-        'bitbucket'
+        // 'twitter',
+        'bitbucket',
+        'gitlab'
     ];
 
      /**
@@ -100,12 +103,16 @@ class SocialAuthController extends Controller
      */
     protected function sendFailedResponse($msg = null)
     {
-        return redirect()->route('social.login')
-            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
+        // dd($msg);
+        Toastr::success('Unable to login, try with another provider to login', $options = ["progressBar"=>true]);
+        return back();
+        // return redirect()->route('login')
+            // ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
     }
 
     protected function loginOrCreateAccount($providerUser, $driver)
     {
+        // dd($providerUser);
         // check for already has account
         $user = User::where('email', $providerUser->getEmail())->first();
 
@@ -130,26 +137,17 @@ class SocialAuthController extends Controller
                 // user can use reset password to create a password
                 'password' => ''
             ]);
+
+            $subscribe = true;
+
+            //add event ya ku subscribe
+            event(new UserRegister($user, $subscribe));
+
+            Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
         }
 
-            $name = $providerUser->getName();
-            $to_email = $providerUser->getEmail();
-            $link = url('/');
-
-            Mail::send('emails.creation', ['name' => $name,'link'=>$link], function ($message) use ($to_email)
-            {
-
-                $message->from(env('MAIL_ACCOUNT'), env('APP_NAME')); 
-
-                $message->to($to_email);
-
-                $message->subject(env('APP_NAME') .' '.'Account creation');
-
-            });
         // login the user
         Auth::login($user, true);
-
-        Toastr::success('Successfully registered', $title = 'Registration', $options = ["progressBar"=>true]);
 
         return $this->sendSuccessResponse();
     }

@@ -19,4 +19,9 @@ class Post extends Model
     public function admin(){
         return $this->belongsTo('App\Admin');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

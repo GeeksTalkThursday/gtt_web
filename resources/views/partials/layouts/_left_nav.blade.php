@@ -3,7 +3,9 @@
 
             <!-- side menu logo start -->
             <div class="sidebar-logo">
-                <a href="index4.html#"></a>
+                <a href="{{url('/')}}">
+                    <img style="width: 75px; height: auto" src="{{ asset('img/1logo.png') }}" alt="">
+                </a>
                 <div class="sidebar-toggle-button">
                     <i class="material-icons">&#xE317;</i>
                 </div>
@@ -19,96 +21,64 @@
 
             <!-- sidebar menu start -->
             <ul class="sidebar-menu">
-                <li class="active">
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE88A;</i></span>
-                        <span class="menu-label">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
+                {{--<li class="{{ Request::is('/') ? "active" : "" }}">--}}
+                    {{--<a href="{{url('/')}}" class="material-button">--}}
+                        {{--<span class="menu-icon"><i class="material-icons">&#xE88A;</i></span>--}}
+                        {{--<span class="menu-label">Home</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{-- <li>
+                    <a href="#" class="material-button">
                         <span class="menu-icon"><i class="material-icons">&#xE038;</i></span>
                         <span class="menu-label">Videos</span>
                     </a>
-                </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE0BF;</i></span>
-                        <span class="menu-label">Posts</span>
+                </li> --}}
+                <li class="{{ Request::is('posts') ? "active" : "" }}">
+                    <a href="{{url('/posts')}}" class="material-button">
+                        <span class="menu-icon"><i class="fa fa-book"></i></span>
+                        <span class="menu-label">Browse</span>
                     </a>
                 </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE866;</i></span>
-                        <span class="menu-label">Contact</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE8B0;</i></span>
-                        <span class="menu-label">Multi Menu</span>
-                        <span class="multimenu-icon"><i class="material-icons">&#xE313;</i></span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="index4.html#"><span class="menu-label">Menu Level 1</span></a>
-                        </li>
-                        <li>
-                            <a href="index4.html#"><span class="menu-label">Menu Level 2</span></a>
-                        </li>
-                        <li>
-                            <a href="index4.html#"><span class="menu-label">Menu Level 3</span></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- sidebar menu end -->
-
-            <div class="sidebar-seperate"></div>
-
-            <!-- sidebar menu start -->
-            <ul class="sidebar-menu">
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE88A;</i></span>
-                        <span class="menu-label">Extra Menu One</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE8B0;</i></span>
-                        <span class="menu-label">Extra Menu Two</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index4.html#" class="material-button">
-                        <span class="menu-icon"><i class="material-icons">&#xE038;</i></span>
-                        <span class="menu-label">Extra Menu Three</span>
+                <li class="{{ Request::is('contact') ? "active" : "" }}">
+                    <a href="{{url('/contact')}}" class="material-button">
+                        <span class="menu-icon"><i class="fa fa-phone"></i></span>
+                        <span class="menu-phone">Contact</span>
                     </a>
                 </li>
             </ul>
             <!-- sidebar menu end -->
 
             <div class="sidebar-seperate"></div>
+        @guest
+            <ul class="sidebar-menu">
+                <li><a><span class="menu-label">Log in with</span></a></li>
+            </ul>
+            <div class="sidebar-seperate"></div>
 
             <!-- sidebar menu start -->
             <ul class="sidebar-menu">
                 <li>
-                    <a href="index4.html#" class="facebook material-button">
-                        <span class="menu-label">Facebook</span>
+                    <a href="{{ route('social.oauth', 'bitbucket') }}" class="facebook material-button">
+                        <span class="menu-label"><i class="fa fa-bitbucket"></i> Bitbucket</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index4.html#" class="twitter material-button">
-                        <span class="menu-label">Twitter</span>
+                    <a href="{{ route('social.oauth', 'github') }}" class="twitter material-button">
+                        <span class="menu-label"><i class="fa fa-github"></i> GitHub</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index4.html#" class="google-plus material-button">
-                        <span class="menu-label">Google +</span>
+                    <a href="{{ route('social.oauth', 'gitlab') }}" class="gitlab material-button">
+                        <span class="menu-label"><i class="fa fa-gitlab"></i> GitLab</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('social.oauth', 'google') }}" class="google-plus material-button">
+                        <span class="menu-label"><img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/></i> Google </span>
+                    </a>
+                </li> 
             </ul>
+        @endguest
             <!-- sidebar menu end -->
         </div>
     </div>

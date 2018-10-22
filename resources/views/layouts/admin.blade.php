@@ -82,11 +82,11 @@
                   </li>
                   {{-- <li><a><i class="fa fa-table"></i> Tables </span></a> --}}
                     
-                  </li>
+                  {{--</li>--}}
                   {{-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation </span></a> --}}
                     
-                  </li>
-                  <li><a class="{{ Request::is('manageMailChimp') ? "active" : "" }}" href="{{url('/manageMailChimp')}}"><i class="fa fa-clone"></i>Send Campaigns </span></a>
+                  {{--</li>--}}
+                  <li><a class="{{ Request::is('manageMailChimp') ? "active" : "" }}" href="{{url('/manageMailChimp')}}"><i class="fa fa-clone"></i><span>Send Campaigns </span></a>
                     
                   </li>
                 </ul>
@@ -223,6 +223,7 @@
     <!-- Bootstrap -->
     <script src="/admins/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
+    {!! Toastr::render() !!}
     {{-- <script src="/admins/vendors/fastclick/lib/fastclick.js"></script> --}}
     <!-- NProgress -->
     <script src="/admins/vendors/nprogress/nprogress.js"></script>
@@ -571,6 +572,7 @@ $('#fileImage-three').on( 'change', function(){
     });
  </script>
 
-    {!! Toastr::render() !!}
+ @yield('scripts')
+
   </body>
 </html>

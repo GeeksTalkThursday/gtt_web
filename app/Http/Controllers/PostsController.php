@@ -78,9 +78,10 @@ class PostsController extends Controller
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags);
-        }else{
-            $post->tags()->sync(array());
         }
+        // else{
+        //     $post->tags()->sync(array());
+        // }
 
         Toastr::success('New Post successfully saved', $title = 'Added Post', $options = ["progressBar"=>true]);
 
@@ -152,7 +153,7 @@ class PostsController extends Controller
                 $oldFilename = $post->thumbnail;
                 $filename1 = public_path().'/images/post/'.$oldFilename;
                \File::delete($filename1);
-           }
+            }
 
            $post->thumbnail = $image_name;
         }
@@ -161,9 +162,10 @@ class PostsController extends Controller
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags);
-        }else{
-            $post->tags()->sync(array());
         }
+        // else{
+        //     $post->tags()->sync(array());
+        // }
 
 
         Toastr::success('New Post successfully saved', $title = 'Added Post', $options = ["progressBar"=>true]);

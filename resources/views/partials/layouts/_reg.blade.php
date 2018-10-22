@@ -1,24 +1,21 @@
-<div class="m-modal-box" id="registerModal">
-        <div class="m-modal-overlay"></div>
+    @if(Request::is('register'))
+        <style type="text/css">
+            body, html{
+                background-color: black!important;
+                color: black;
+            }
+        </style>
+    @endif
         <div class="m-modal-content small">
-            <div class="m-modal-header">
-                <h3 class="m-modal-title">Register</h3>
-                <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+            <div class="m-modal-header text-center">
+                <h3 class="m-modal-title">Register with</h3>
+                @if(!Request::is('register'))
+                    <span class="m-modal-close"><i class="material-icons">&#xE5CD;</i></span>
+                @endif
             </div>
             <div class="m-modal-body">
                 {{-- hii iko kwa login LREDy --}}
-                <div class="m-modal-social-logins">
-                    <br>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'github') }}" class="frm-button facebook material-button full" type="button">GitHub</a>
-                    </div>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'bitbucket') }}" class="frm-button twitter material-button full" type="button">Bitbucket</a>
-                    </div>
-                    <div class="columns column-2">
-                        <a href="{{ route('social.oauth', 'google') }}" class="frm-button google material-button full" type="button">Google</a>
-                    </div>
-                </div>
+                @include('partials.layouts._social_auths')
 
                 <div class="m-modal-seperator"><span>OR</span></div>
 
@@ -52,14 +49,12 @@
                         <input class="frm-input" type="password" name="password_confirmation" placeholder="Confirm Password">
                     </div>
                     <div class="frm-row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right"></label>
-                        <div class="col-md-6 ">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="subscribe" {{ old('subscribe') ? 'checked' : '' }}> Subscribe to our notifications
-                                </label>
-                            </div>
+                        <div class="col-xs-4 ">
+                            <input type="checkbox" name="subscribe" {{ old('subscribe') ? 'checked' : 'checked' }} id="cbx" style="display:none"> 
+                            <label for="cbx" class="toggle"><span></span></label>  
+                                     
                         </div>
+                        <label for="password-confirm" class="col-xs-8 col-form-label text-md-right">Subscribe to our notifications</label>
                     </div>
                     <div class="frm-row">
                         <button class="frm-button material-button full" type="submit">Register</button>
@@ -70,4 +65,3 @@
                 </div>
             </div>
         </div>
-    </div>

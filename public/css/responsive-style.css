@@ -3,7 +3,7 @@
 	    width: 6px;
 	}
 	::-webkit-scrollbar-thumb {
-	    background: #dc2430;
+	    background: #22A99E;
 	}
 	::-webkit-scrollbar-track {
 	    background: #455a64;
@@ -117,7 +117,8 @@
 		font-size: 18px;
 	}
 	.article-left-box{
-		display: none;
+		/*display: none;*/
+		margin-top: -530px;
 	}
 	.article-inner{
 		margin-left: 0 !important;
